@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Diplomado en Programación de Computadoras — Contenido Curricular</title>
+<title>Diplomado en Programación de Computadoras — Contenido Curricular Detallado</title>
 <style>
   :root {
     --win-blue: #0078D4;
@@ -24,7 +24,6 @@
   }
 
   * { box-sizing: border-box; }
-
   html { scroll-behavior: smooth; }
 
   body {
@@ -58,214 +57,103 @@
       radial-gradient(400px 250px at 10% 90%, rgba(232,17,35,0.35), transparent 60%);
     pointer-events: none;
   }
-  .hero-inner {
-    position: relative;
-    max-width: 1100px;
-    margin: 0 auto;
-  }
+  .hero-inner { position: relative; max-width: 1100px; margin: 0 auto; }
   .hero-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: rgba(255,255,255,0.16);
-    border: 1px solid rgba(255,255,255,0.3);
-    padding: 6px 14px;
-    border-radius: 999px;
-    font-size: 13px;
-    letter-spacing: 0.2px;
-    margin-bottom: 18px;
-    backdrop-filter: blur(6px);
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(255,255,255,0.16); border: 1px solid rgba(255,255,255,0.3);
+    padding: 6px 14px; border-radius: 999px; font-size: 13px;
+    margin-bottom: 18px; backdrop-filter: blur(6px);
   }
   .hero h1 {
-    font-size: clamp(28px, 4.2vw, 46px);
-    line-height: 1.12;
-    margin: 0 0 12px;
-    font-weight: 600;
-    max-width: 780px;
+    font-size: clamp(28px, 4.2vw, 46px); line-height: 1.12; margin: 0 0 12px;
+    font-weight: 600; max-width: 780px;
   }
   .hero p.lead {
-    font-size: 17px;
-    max-width: 620px;
-    color: rgba(255,255,255,0.88);
-    margin: 0 0 32px;
-    line-height: 1.55;
+    font-size: 17px; max-width: 640px; color: rgba(255,255,255,0.88);
+    margin: 0 0 32px; line-height: 1.55;
   }
-  .hero-stats {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 14px;
-  }
+  .hero-stats { display: flex; flex-wrap: wrap; gap: 14px; }
   .stat {
-    background: rgba(255,255,255,0.14);
-    border: 1px solid rgba(255,255,255,0.22);
-    border-radius: var(--radius-lg);
-    padding: 14px 20px;
-    min-width: 130px;
+    background: rgba(255,255,255,0.14); border: 1px solid rgba(255,255,255,0.22);
+    border-radius: var(--radius-lg); padding: 14px 20px; min-width: 130px;
     backdrop-filter: blur(8px);
   }
   .stat .num { font-size: 24px; font-weight: 600; display:block; }
   .stat .label { font-size: 12.5px; color: rgba(255,255,255,0.8); }
 
   /* ---------- Hardware strip ---------- */
-  .hw-strip {
-    max-width: 1100px;
-    margin: -28px auto 0;
-    position: relative;
-    z-index: 2;
-    padding: 0 32px;
-  }
+  .hw-strip { max-width: 1100px; margin: -28px auto 0; position: relative; z-index: 2; padding: 0 32px; }
   .hw-strip-inner {
-    background: var(--mica);
-    backdrop-filter: blur(20px) saturate(1.4);
-    -webkit-backdrop-filter: blur(20px) saturate(1.4);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow);
-    padding: 18px 22px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px 22px;
-    justify-content: center;
+    background: var(--mica); backdrop-filter: blur(20px) saturate(1.4); -webkit-backdrop-filter: blur(20px) saturate(1.4);
+    border: 1px solid var(--border); border-radius: var(--radius-lg); box-shadow: var(--shadow);
+    padding: 18px 22px; display: flex; flex-wrap: wrap; gap: 10px 22px; justify-content: center;
   }
-  .hw-item {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 14px;
-    color: var(--text-soft);
-    white-space: nowrap;
-  }
+  .hw-item { display: flex; align-items: center; gap: 8px; font-size: 14px; color: var(--text-soft); white-space: nowrap; }
   .hw-item .ic { font-size: 18px; }
 
   /* ---------- Nav tabs ---------- */
-  .tabs-wrap {
-    max-width: 1100px;
-    margin: 34px auto 0;
-    padding: 0 32px;
-  }
-  .tabs {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-  }
+  .tabs-wrap { max-width: 1100px; margin: 34px auto 0; padding: 0 32px; }
+  .tabs { display: flex; gap: 10px; flex-wrap: wrap; }
   .tab {
-    flex: 1 1 220px;
-    text-align: left;
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 14px 18px;
-    font-family: inherit;
-    font-size: 15px;
-    font-weight: 600;
-    color: var(--text);
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-    box-shadow: var(--shadow);
-    transition: transform 0.15s ease, border-color 0.15s ease;
+    flex: 1 1 220px; text-align: left; background: var(--card); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 14px 18px; font-family: inherit; font-size: 15px; font-weight: 600;
+    color: var(--text); cursor: pointer; display: flex; flex-direction: column; gap: 2px;
+    box-shadow: var(--shadow); transition: transform 0.15s ease, border-color 0.15s ease;
     border-bottom: 3px solid transparent;
   }
   .tab:hover { transform: translateY(-2px); }
-  .tab.active {
-    border-bottom: 3px solid var(--win-blue);
-    color: var(--win-blue-dark);
-  }
+  .tab.active { border-bottom: 3px solid var(--win-blue); color: var(--win-blue-dark); }
   .tab.active:nth-child(2) { border-bottom-color: var(--win-red); color: var(--win-red-dark); }
-  .tab.active:nth-child(3) {
-    border-bottom: 3px solid;
-    border-image: linear-gradient(90deg, var(--win-blue), var(--win-red)) 1;
-  }
+  .tab.active:nth-child(3) { border-bottom: 3px solid; border-image: linear-gradient(90deg, var(--win-blue), var(--win-red)) 1; }
   .tab-sub { font-size: 12.5px; font-weight: 400; color: var(--text-soft); }
 
   /* ---------- Level panels ---------- */
-  main {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 28px 32px 80px;
-  }
+  main { max-width: 1100px; margin: 0 auto; padding: 28px 32px 80px; }
   .level-panel { display: none; }
   .level-panel.active { display: block; animation: fadein 0.25s ease; }
   @keyframes fadein { from { opacity:0; transform: translateY(6px);} to {opacity:1; transform:none;} }
 
   .level-header {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 6px;
-    margin: 22px 0 18px;
-    border-bottom: 1px solid var(--border);
-    padding-bottom: 14px;
+    display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 6px;
+    margin: 22px 0 18px; border-bottom: 1px solid var(--border); padding-bottom: 14px;
   }
   .level-header h2 { margin: 0; font-size: 22px; font-weight: 600; }
   .level-header p { margin: 0; color: var(--text-soft); font-size: 14px; }
 
-  .course-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
+  .course-grid { display: flex; flex-direction: column; gap: 10px; }
 
-  .course-card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    overflow: hidden;
-  }
+  .course-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
   .course-card summary {
-    list-style: none;
-    cursor: pointer;
-    padding: 16px 18px;
-    display: grid;
-    grid-template-columns: 40px 1fr auto 20px;
-    align-items: center;
-    gap: 14px;
+    list-style: none; cursor: pointer; padding: 16px 18px;
+    display: grid; grid-template-columns: 40px 1fr auto 20px; align-items: center; gap: 14px;
   }
   .course-card summary::-webkit-details-marker { display: none; }
   .course-icon { font-size: 24px; text-align: center; }
   .course-heading { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
   .course-title { font-weight: 600; font-size: 15px; }
-  .course-obj { font-size: 13px; color: var(--text-soft); line-height: 1.4; }
   .course-duration {
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--win-blue-dark);
-    background: rgba(0,120,212,0.10);
-    padding: 4px 10px;
-    border-radius: 999px;
-    white-space: nowrap;
+    font-size: 13px; font-weight: 600; color: var(--win-blue-dark);
+    background: rgba(0,120,212,0.10); padding: 4px 10px; border-radius: 999px; white-space: nowrap;
   }
-  .chev {
-    font-size: 20px;
-    color: var(--text-soft);
-    transition: transform 0.2s ease;
-    justify-self: end;
-  }
+  .chev { font-size: 20px; color: var(--text-soft); transition: transform 0.2s ease; justify-self: end; }
   .course-card[open] .chev { transform: rotate(90deg); color: var(--win-red); }
   .course-card[open] summary { border-bottom: 1px solid var(--border); }
 
-  .course-body { padding: 6px 18px 16px 72px; }
-  table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
-  thead th {
-    text-align: left;
-    color: var(--text-soft);
-    font-weight: 600;
-    padding: 6px 8px;
-    border-bottom: 1px solid var(--border);
-  }
-  tbody td { padding: 8px; border-bottom: 1px solid rgba(0,0,0,0.05); }
-  tbody tr:last-child td { border-bottom: none; }
-  td.hrs { text-align: right; color: var(--win-red-dark); font-weight: 600; white-space: nowrap; }
+  .course-body { padding: 14px 18px 18px 72px; }
+  .course-obj { font-size: 13.5px; color: var(--text-soft); line-height: 1.55; margin: 0 0 16px; }
 
-  footer {
-    text-align: center;
-    padding: 30px 20px 50px;
-    color: var(--text-soft);
-    font-size: 13px;
+  .units-grid { display: flex; flex-direction: column; gap: 10px; }
+  .unit { background: rgba(0,0,0,0.02); border: 1px solid var(--border); border-radius: 6px; padding: 10px 14px; }
+  .unit-head { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 6px; }
+  .unit-title { font-weight: 600; font-size: 13.5px; color: var(--win-blue-dark); }
+  .unit-hrs {
+    font-size: 12px; font-weight: 700; color: var(--win-red-dark);
+    background: rgba(232,17,35,0.08); padding: 2px 9px; border-radius: 999px; white-space: nowrap;
   }
+  .unit-topics { margin: 0; padding-left: 18px; font-size: 13px; color: var(--text); line-height: 1.6; }
+  .unit-topics li { margin-bottom: 2px; }
+
+  footer { text-align: center; padding: 30px 20px 50px; color: var(--text-soft); font-size: 13px; }
   footer .dot { color: var(--win-blue); }
   footer .dot2 { color: var(--win-red); }
 
@@ -284,12 +172,12 @@
     <div class="hero-inner">
       <span class="hero-badge">📘 Diplomado · Enfoque STEM</span>
       <h1>Diplomado en Programación de Computadoras</h1>
-      <p class="lead">Contenido curricular actualizado 2026 — de los fundamentos de hardware y sistemas operativos hasta robótica, inteligencia artificial, desarrollo web full-stack y despliegue en la nube.</p>
+      <p class="lead">Contenido curricular detallado 2027 — de los fundamentos de hardware y sistemas operativos hasta robótica, tecnologías emergentes, desarrollo web full-stack, ciencia de datos y despliegue en la nube.</p>
       <div class="hero-stats">
         <div class="stat"><span class="num">3</span><span class="label">Niveles / años</span></div>
         <div class="stat"><span class="num">32</span><span class="label">Cursos</span></div>
         <div class="stat"><span class="num">640</span><span class="label">Horas totales</span></div>
-        <div class="stat"><span class="num">20h</span><span class="label">Promedio por curso</span></div>
+        <div class="stat"><span class="num">20h</span><span class="label">Por curso</span></div>
       </div>
     </div>
   </header>
@@ -300,9 +188,11 @@
       <span class="hw-item"><span class="ic">🖨️</span>Impresora 3D</span>
       <span class="hw-item"><span class="ic">🔌</span>Arduino</span>
       <span class="hw-item"><span class="ic">🍓</span>Raspberry Pi</span>
-      <span class="hw-item"><span class="ic">🤖</span>Robótica</span>
+      <span class="hw-item"><span class="ic">🔬</span>Microscopio electrónico</span>
+      <span class="hw-item"><span class="ic">✨</span>Pantalla holográfica</span>
+      <span class="hw-item"><span class="ic">🔭</span>Telescopio digital</span>
+      <span class="hw-item"><span class="ic">⚛️</span>Computación cuántica</span>
       <span class="hw-item"><span class="ic">🧠</span>IA generativa</span>
-      <span class="hw-item"><span class="ic">🗄️</span>Bases de datos</span>
       <span class="hw-item"><span class="ic">☁️</span>Cloud / DevOps</span>
       <span class="hw-item"><span class="ic">🔒</span>Ciberseguridad</span>
       <span class="hw-item"><span class="ic">📱</span>Apps móviles</span>
@@ -331,16 +221,42 @@
             <span class="course-icon">🖥️</span>
             <span class="course-heading">
               <span class="course-title">Fundamentos de Computación, Hardware/Software</span>
-              <span class="course-obj">Comprender los componentes físicos y lógicos de una computadora y su relación con la programación.</span>
             </span>
             <span class="course-duration">20h</span>
             <span class="chev">›</span>
           </summary>
           <div class="course-body">
-            <table>
-              <thead><tr><th>Tema / Contenido</th><th>Horas</th></tr></thead>
-              <tbody><tr><td>Historia y evolución de la computación</td><td class="hrs">2h</td></tr><tr><td>Arquitectura del computador: CPU, memoria, almacenamiento, E/S</td><td class="hrs">4h</td></tr><tr><td>Sistemas numéricos: binario, decimal, hexadecimal</td><td class="hrs">4h</td></tr><tr><td>Software: sistemas operativos, aplicaciones, firmware</td><td class="hrs">4h</td></tr><tr><td>Ensamblaje básico y mantenimiento preventivo</td><td class="hrs">3h</td></tr><tr><td>Introducción a la nube y virtualización</td><td class="hrs">3h</td></tr></tbody>
-            </table>
+            <p class="course-obj">Este curso introduce al estudiante en los fundamentos conceptuales y físicos de la computación moderna, permitiéndole comprender cómo se relacionan el hardware y el software para ejecutar procesos digitales. Al finalizar, el participante será capaz de identificar los componentes internos de una computadora, interpretar sistemas numéricos utilizados en el procesamiento de datos, y reconocer el rol de la nube y la virtualización en la infraestructura tecnológica actual, sentando las bases necesarias para abordar el estudio formal de la programación.</p>
+            <div class="units-grid">
+              <div class="unit">
+                <div class="unit-head">
+                  <span class="unit-title">Evolución y arquitectura de la computación</span>
+                  <span class="unit-hrs">6h</span>
+                </div>
+                <ul class="unit-topics"><li>Historia y evolución de la computación</li><li>Arquitectura del computador: CPU, memoria, almacenamiento, entrada/salida</li><li>Relación entre hardware y software en la ejecución de programas</li></ul>
+              </div>
+              <div class="unit">
+                <div class="unit-head">
+                  <span class="unit-title">Sistemas numéricos y representación de datos</span>
+                  <span class="unit-hrs">4h</span>
+                </div>
+                <ul class="unit-topics"><li>Sistema binario, decimal y hexadecimal</li><li>Conversión entre sistemas numéricos</li><li>Representación de datos en memoria</li></ul>
+              </div>
+              <div class="unit">
+                <div class="unit-head">
+                  <span class="unit-title">Software y mantenimiento del sistema</span>
+                  <span class="unit-hrs">5h</span>
+                </div>
+                <ul class="unit-topics"><li>Tipos de software: sistemas operativos, aplicaciones, firmware</li><li>Ensamblaje básico de componentes</li><li>Mantenimiento preventivo de equipos</li></ul>
+              </div>
+              <div class="unit">
+                <div class="unit-head">
+                  <span class="unit-title">Introducción a la nube y virtualización</span>
+                  <span class="unit-hrs">5h</span>
+                </div>
+                <ul class="unit-topics"><li>Conceptos de computación en la nube</li><li>Modelos de servicio: IaaS, PaaS, SaaS</li><li>Virtualización de sistemas y máquinas virtuales</li></ul>
+              </div>
+            </div>
           </div>
         </details>
         <details class="course-card">
@@ -348,16 +264,35 @@
             <span class="course-icon">🪟</span>
             <span class="course-heading">
               <span class="course-title">Sistema Operativo I, Windows 11</span>
-              <span class="course-obj">Administrar el sistema operativo Windows 11 a nivel de usuario avanzado, con enfoque en productividad para programadores.</span>
             </span>
             <span class="course-duration">20h</span>
             <span class="chev">›</span>
           </summary>
           <div class="course-body">
-            <table>
-              <thead><tr><th>Tema / Contenido</th><th>Horas</th></tr></thead>
-              <tbody><tr><td>Instalación y configuración de Windows 11</td><td class="hrs">3h</td></tr><tr><td>Sistema de archivos NTFS y gestión de discos</td><td class="hrs">3h</td></tr><tr><td>Terminal de Windows y PowerShell básico</td><td class="hrs">5h</td></tr><tr><td>Administración de usuarios, permisos y seguridad</td><td class="hrs">3h</td></tr><tr><td>Instalación de entornos de desarrollo (Node, Python, Git)</td><td class="hrs">4h</td></tr><tr><td>Automatización con scripts .bat/.ps1</td><td class="hrs">2h</td></tr></tbody>
-            </table>
+            <p class="course-obj">Este curso capacita al estudiante para administrar de manera eficiente el sistema operativo Windows 11 desde una perspectiva de usuario avanzado orientado al desarrollo de software. El participante aprenderá a configurar el entorno operativo, gestionar el sistema de archivos y los permisos de seguridad, así como a utilizar la terminal y PowerShell para automatizar tareas. Al concluir, contará con un entorno de trabajo productivo, correctamente configurado con las herramientas de desarrollo que utilizará durante el resto del diplomado.</p>
+            <div class="units-grid">
+              <div class="unit">
+                <div class="unit-head">
+                  <span class="unit-title">Instalación y configuración del sistema</span>
+                  <span class="unit-hrs">5h</span>
+                </div>
+                <ul class="unit-topics"><li>Instalación y configuración inicial de Windows 11</li><li>Sistema de archivos NTFS y gestión de discos</li><li>Administración de usuarios, permisos y seguridad</li></ul>
+              </div>
+              <div class="unit">
+                <div class="unit-head">
+                  <span class="unit-title">Terminal y automatización</span>
+                  <span class="unit-hrs">7h</span>
+                </div>
+                <ul class="unit-topics"><li>Terminal de Windows y fundamentos de PowerShell</li><li>Comandos esenciales para gestión de archivos y procesos</li><li>Automatización de tareas con scripts .bat/.ps1</li></ul>
+              </div>
+              <div class="unit">
+                <div class="unit-head">
+                  <span class="unit-title">Entorno de desarrollo</span>
+                  <span class="unit-hrs">8h</span>
+                </div>
+                <ul class="unit-topics"><li>Instalación de Node.js, Python y gestores de paquetes</li><li>Configuración de Git y variables de entorno</li><li>Editores de código (VS Code) y extensiones esenciales</li></ul>
+              </div>
+            </div>
           </div>
         </details>
         <details class="course-card">
@@ -365,16 +300,35 @@
             <span class="course-icon">🐧</span>
             <span class="course-heading">
               <span class="course-title">Sistema Operativo II, Linux Ubuntu 22.04.3 LTS</span>
-              <span class="course-obj">Utilizar Linux como entorno de desarrollo, dominando la terminal y la gestión de paquetes.</span>
             </span>
             <span class="course-duration">20h</span>
             <span class="chev">›</span>
           </summary>
           <div class="course-body">
-            <table>
-              <thead><tr><th>Tema / Contenido</th><th>Horas</th></tr></thead>
-              <tbody><tr><td>Instalación de Ubuntu (dual boot / máquina virtual)</td><td class="hrs">2h</td></tr><tr><td>Estructura de directorios y sistema de archivos</td><td class="hrs">2h</td></tr><tr><td>Terminal Bash: comandos esenciales</td><td class="hrs">5h</td></tr><tr><td>Gestión de paquetes (APT) y compilación desde código fuente</td><td class="hrs">3h</td></tr><tr><td>Permisos, usuarios y procesos</td><td class="hrs">4h</td></tr><tr><td>Scripting en Bash para automatización</td><td class="hrs">4h</td></tr></tbody>
-            </table>
+            <p class="course-obj">Este curso desarrolla en el estudiante la capacidad de utilizar Linux como un entorno de desarrollo profesional, dado que la mayoría de servidores e infraestructuras de software en producción operan sobre este sistema operativo. El participante aprenderá a instalar y configurar Ubuntu, dominar el uso de la terminal Bash, administrar paquetes y permisos, y automatizar tareas mediante scripts, habilidades indispensables para cualquier programador que trabaje en entornos profesionales modernos.</p>
+            <div class="units-grid">
+              <div class="unit">
+                <div class="unit-head">
+                  <span class="unit-title">Instalación y estructura del sistema</span>
+                  <span class="unit-hrs">4h</span>
+                </div>
+                <ul class="unit-topics"><li>Instalación de Ubuntu (dual boot / máquina virtual)</li><li>Estructura de directorios y sistema de archivos</li></ul>
+              </div>
+              <div class="unit">
+                <div class="unit-head">
+                  <span class="unit-title">Terminal y gestión de paquetes</span>
+                  <span class="unit-hrs">8h</span>
+                </div>
+                <ul class="unit-topics"><li>Comandos esenciales de Bash</li><li>Gestión de paquetes con APT</li><li>Compilación de programas desde código fuente</li></ul>
+              </div>
+              <div class="unit">
+                <div class="unit-head">
+                  <span class="unit-title">Administración y automatización</span>
+                  <span class="unit-hrs">8h</span>
+                </div>
+                <ul class="unit-topics"><li>Permisos, usuarios y grupos</li><li>Gestión de procesos</li><li>Scripting en Bash para automatización de tareas</li></ul>
+              </div>
+            </div>
           </div>
         </details>
         <details class="course-card">
@@ -382,16 +336,35 @@
             <span class="course-icon">🧠</span>
             <span class="course-heading">
               <span class="course-title">Herramientas de IA (Inteligencia Artificial)</span>
-              <span class="course-obj">Aplicar herramientas de IA generativa y asistentes de código como apoyo al desarrollo de software.</span>
             </span>
             <span class="course-duration">20h</span>
             <span class="chev">›</span>
           </summary>
           <div class="course-body">
-            <table>
-              <thead><tr><th>Tema / Contenido</th><th>Horas</th></tr></thead>
-              <tbody><tr><td>Fundamentos de IA y machine learning (conceptos)</td><td class="hrs">3h</td></tr><tr><td>Asistentes de código (GitHub Copilot, Claude, ChatGPT)</td><td class="hrs">5h</td></tr><tr><td>Prompt engineering para generación y depuración de código</td><td class="hrs">4h</td></tr><tr><td>Herramientas de IA para diseño e imágenes</td><td class="hrs">4h</td></tr><tr><td>Ética, limitaciones y verificación de resultados de IA</td><td class="hrs">2h</td></tr><tr><td>Proyecto: automatizar una tarea con IA</td><td class="hrs">2h</td></tr></tbody>
-            </table>
+            <p class="course-obj">Este curso introduce al estudiante en el uso práctico y responsable de herramientas de inteligencia artificial generativa aplicadas al desarrollo de software. El participante aprenderá a utilizar asistentes de código como apoyo para generar, depurar y documentar programas, dominará técnicas de prompt engineering para obtener resultados precisos, y desarrollará criterio ético para verificar y validar la información generada por estas herramientas, reconociendo tanto su potencial como sus limitaciones.</p>
+            <div class="units-grid">
+              <div class="unit">
+                <div class="unit-head">
+                  <span class="unit-title">Fundamentos de IA aplicada</span>
+                  <span class="unit-hrs">5h</span>
+                </div>
+                <ul class="unit-topics"><li>Conceptos de inteligencia artificial y machine learning</li><li>Tipos de asistentes de IA disponibles para programación</li></ul>
+              </div>
+              <div class="unit">
+                <div class="unit-head">
+                  <span class="unit-title">Asistentes de código y prompt engineering</span>
+                  <span class="unit-hrs">9h</span>
+                </div>
+                <ul class="unit-topics"><li>Uso de asistentes de IA (Copilot, Claude, ChatGPT) en el flujo de trabajo</li><li>Técnicas de prompt engineering para generación y depuración de código</li><li>Herramientas de IA para diseño gráfico e imágenes</li></ul>
+              </div>
+              <div class="unit">
+                <div class="unit-head">
+                  <span class="unit-title">Ética y aplicación práctica</span>
+                  <span class="unit-hrs">6h</span>
+                </div>
+                <ul class="unit-topics"><li>Limitaciones, sesgos y verificación de resultados de IA</li><li>Buenas prácticas de uso responsable</li><li>Proyecto: automatización de una tarea con apoyo de IA</li></ul>
+              </div>
+            </div>
           </div>
         </details>
         <details class="course-card">
@@ -399,16 +372,35 @@
             <span class="course-icon">🤖</span>
             <span class="course-heading">
               <span class="course-title">Introducción a la Robótica</span>
-              <span class="course-obj">Comprender los fundamentos de la robótica y su relación con la programación de sistemas embebidos.</span>
             </span>
             <span class="course-duration">20h</span>
             <span class="chev">›</span>
           </summary>
           <div class="course-body">
-            <table>
-              <thead><tr><th>Tema / Contenido</th><th>Horas</th></tr></thead>
-              <tbody><tr><td>Historia y componentes de un robot (sensores, actuadores)</td><td class="hrs">3h</td></tr><tr><td>Electrónica básica: circuitos, voltaje, corriente</td><td class="hrs">4h</td></tr><tr><td>Introducción a microcontroladores</td><td class="hrs">4h</td></tr><tr><td>Lógica de control: condicionales y bucles aplicados a robótica</td><td class="hrs">4h</td></tr><tr><td>Simulación de circuitos (Tinkercad)</td><td class="hrs">3h</td></tr><tr><td>Proyecto introductorio de robótica</td><td class="hrs">2h</td></tr></tbody>
-            </table>
+            <p class="course-obj">Este curso proporciona al estudiante una introducción integral a los principios de la robótica, combinando fundamentos de electrónica con lógica de programación aplicada al control de sistemas físicos. Al finalizar, el participante comprenderá el funcionamiento de sensores y actuadores, será capaz de diseñar circuitos electrónicos básicos y simularlos digitalmente, y aplicará estructuras de control de programación para desarrollar un proyecto introductorio de robótica funcional.</p>
+            <div class="units-grid">
+              <div class="unit">
+                <div class="unit-head">
+                  <span class="unit-title">Fundamentos de robótica y electrónica</span>
+                  <span class="unit-hrs">7h</span>
+                </div>
+                <ul class="unit-topics"><li>Historia y componentes de un robot: sensores y actuadores</li><li>Electrónica básica: circuitos, voltaje y corriente</li></ul>
+              </div>
+              <div class="unit">
+                <div class="unit-head">
+                  <span class="unit-title">Microcontroladores y lógica de control</span>
+                  <span class="unit-hrs">7h</span>
+                </div>
+                <ul class="unit-topics"><li>Introducción a microcontroladores</li><li>Estructuras de control aplicadas a robótica (condicionales y bucles)</li></ul>
+              </div>
+              <div class="unit">
+                <div class="unit-head">
+                  <span class="unit-title">Simulación y proyecto práctico</span>
+                  <span class="unit-hrs">6h</span>
+                </div>
+                <ul class="unit-topics"><li>Simulación de circuitos en Tinkercad</li><li>Proyecto introductorio de robótica</li></ul>
+              </div>
+            </div>
           </div>
         </details>
         <details class="course-card">
@@ -416,16 +408,35 @@
             <span class="course-icon">🖨️</span>
             <span class="course-heading">
               <span class="course-title">Fundamentos de Diseño e Impresión 3D</span>
-              <span class="course-obj">Diseñar modelos 3D básicos y prepararlos para impresión, integrando con proyectos de programación/robótica.</span>
             </span>
             <span class="course-duration">20h</span>
             <span class="chev">›</span>
           </summary>
           <div class="course-body">
-            <table>
-              <thead><tr><th>Tema / Contenido</th><th>Horas</th></tr></thead>
-              <tbody><tr><td>Introducción al modelado 3D (conceptos, software)</td><td class="hrs">3h</td></tr><tr><td>Diseño con Tinkercad/Blender básico</td><td class="hrs">5h</td></tr><tr><td>Preparación de archivos STL y slicing</td><td class="hrs">4h</td></tr><tr><td>Fundamentos de impresión FDM</td><td class="hrs">4h</td></tr><tr><td>Diseño de carcasas para proyectos electrónicos/robótica</td><td class="hrs">4h</td></tr></tbody>
-            </table>
+            <p class="course-obj">Este curso desarrolla en el estudiante las competencias necesarias para diseñar modelos tridimensionales y prepararlos para su fabricación mediante impresión 3D, una habilidad clave para prototipar los proyectos de robótica y electrónica del diplomado. El participante aprenderá los fundamentos del modelado 3D, el proceso de laminado (slicing) y los principios de la impresión FDM, culminando con el diseño de carcasas funcionales para proyectos electrónicos.</p>
+            <div class="units-grid">
+              <div class="unit">
+                <div class="unit-head">
+                  <span class="unit-title">Modelado 3D básico</span>
+                  <span class="unit-hrs">8h</span>
+                </div>
+                <ul class="unit-topics"><li>Introducción al modelado 3D: conceptos y software</li><li>Diseño con Tinkercad y fundamentos de Blender</li></ul>
+              </div>
+              <div class="unit">
+                <div class="unit-head">
+                  <span class="unit-title">Preparación e impresión</span>
+                  <span class="unit-hrs">7h</span>
+                </div>
+                <ul class="unit-topics"><li>Preparación de archivos STL y proceso de slicing</li><li>Fundamentos de impresión FDM: materiales y parámetros</li></ul>
+              </div>
+              <div class="unit">
+                <div class="unit-head">
+                  <span class="unit-title">Aplicación práctica</span>
+                  <span class="unit-hrs">5h</span>
+                </div>
+                <ul class="unit-topics"><li>Diseño de carcasas para proyectos electrónicos y de robótica</li></ul>
+              </div>
+            </div>
           </div>
         </details>
         <details class="course-card">
@@ -433,16 +444,35 @@
             <span class="course-icon">🧩</span>
             <span class="course-heading">
               <span class="course-title">Introducción a la Programación, Historia/Algoritmos</span>
-              <span class="course-obj">Desarrollar pensamiento algorítmico y comprender la lógica de programación previo a un lenguaje formal.</span>
             </span>
             <span class="course-duration">20h</span>
             <span class="chev">›</span>
           </summary>
           <div class="course-body">
-            <table>
-              <thead><tr><th>Tema / Contenido</th><th>Horas</th></tr></thead>
-              <tbody><tr><td>Historia de la programación y paradigmas</td><td class="hrs">2h</td></tr><tr><td>Algoritmos: definición, características, pseudocódigo</td><td class="hrs">4h</td></tr><tr><td>Diagramas de flujo</td><td class="hrs">4h</td></tr><tr><td>Estructuras de control: secuencia, selección, repetición</td><td class="hrs">6h</td></tr><tr><td>Resolución de problemas algorítmicos</td><td class="hrs">4h</td></tr></tbody>
-            </table>
+            <p class="course-obj">Este curso desarrolla el pensamiento algorítmico del estudiante como base indispensable antes de aprender un lenguaje de programación formal. El participante comprenderá la evolución histórica de la programación, aprenderá a representar soluciones mediante pseudocódigo y diagramas de flujo, y aplicará estructuras de control fundamentales (secuencia, selección y repetición) en la resolución de problemas lógicos, desarrollando la capacidad de descomponer problemas complejos en pasos ejecutables.</p>
+            <div class="units-grid">
+              <div class="unit">
+                <div class="unit-head">
+                  <span class="unit-title">Fundamentos históricos y conceptuales</span>
+                  <span class="unit-hrs">2h</span>
+                </div>
+                <ul class="unit-topics"><li>Historia de la programación y principales paradigmas</li></ul>
+              </div>
+              <div class="unit">
+                <div class="unit-head">
+                  <span class="unit-title">Representación de algoritmos</span>
+                  <span class="unit-hrs">8h</span>
+                </div>
+                <ul class="unit-topics"><li>Algoritmos: definición y características</li><li>Pseudocódigo</li><li>Diagramas de flujo</li></ul>
+              </div>
+              <div class="unit">
+                <div class="unit-head">
+                  <span class="unit-title">Estructuras de control y resolución de problemas</span>
+                  <span class="unit-hrs">10h</span>
+                </div>
+                <ul class="unit-topics"><li>Estructuras de secuencia, selección y repetición</li><li>Resolución de problemas algorítmicos aplicados</li></ul>
+              </div>
+            </div>
           </div>
         </details>
         <details class="course-card">
@@ -450,16 +480,35 @@
             <span class="course-icon">💻</span>
             <span class="course-heading">
               <span class="course-title">Programación I, Programación Estructurada</span>
-              <span class="course-obj">Programar aplicando estructuras de control, funciones y manejo de datos básicos en un lenguaje estructurado.</span>
             </span>
             <span class="course-duration">20h</span>
             <span class="chev">›</span>
           </summary>
           <div class="course-body">
-            <table>
-              <thead><tr><th>Tema / Contenido</th><th>Horas</th></tr></thead>
-              <tbody><tr><td>Variables, tipos de datos y operadores</td><td class="hrs">3h</td></tr><tr><td>Estructuras condicionales</td><td class="hrs">3h</td></tr><tr><td>Estructuras repetitivas</td><td class="hrs">4h</td></tr><tr><td>Arreglos y cadenas</td><td class="hrs">4h</td></tr><tr><td>Funciones y modularización</td><td class="hrs">4h</td></tr><tr><td>Proyecto integrador</td><td class="hrs">2h</td></tr></tbody>
-            </table>
+            <p class="course-obj">Este curso capacita al estudiante para desarrollar programas aplicando el paradigma de programación estructurada, utilizando variables, estructuras de control, arreglos y funciones como bloques fundamentales de construcción de software. Al finalizar, el participante será capaz de diseñar, codificar y depurar programas modulares de complejidad básica-intermedia, culminando con el desarrollo de un proyecto integrador que consolide los conceptos aprendidos.</p>
+            <div class="units-grid">
+              <div class="unit">
+                <div class="unit-head">
+                  <span class="unit-title">Datos y estructuras de control</span>
+                  <span class="unit-hrs">10h</span>
+                </div>
+                <ul class="unit-topics"><li>Variables, tipos de datos y operadores</li><li>Estructuras condicionales</li><li>Estructuras repetitivas</li></ul>
+              </div>
+              <div class="unit">
+                <div class="unit-head">
+                  <span class="unit-title">Estructuras de datos y modularización</span>
+                  <span class="unit-hrs">8h</span>
+                </div>
+                <ul class="unit-topics"><li>Arreglos y cadenas de caracteres</li><li>Funciones y modularización de código</li></ul>
+              </div>
+              <div class="unit">
+                <div class="unit-head">
+                  <span class="unit-title">Proyecto integrador</span>
+                  <span class="unit-hrs">2h</span>
+                </div>
+                <ul class="unit-topics"><li>Desarrollo de un programa estructurado completo</li></ul>
+              </div>
+            </div>
           </div>
         </details>
         <details class="course-card">
@@ -467,16 +516,35 @@
             <span class="course-icon">🐍</span>
             <span class="course-heading">
               <span class="course-title">Pensamiento Computacional y Lógica con Python</span>
-              <span class="course-obj">Introducir Python como primer lenguaje moderno, reforzando el pensamiento computacional.</span>
             </span>
             <span class="course-duration">20h</span>
             <span class="chev">›</span>
           </summary>
           <div class="course-body">
-            <table>
-              <thead><tr><th>Tema / Contenido</th><th>Horas</th></tr></thead>
-              <tbody><tr><td>Instalación de Python y entorno (VS Code, Jupyter)</td><td class="hrs">2h</td></tr><tr><td>Sintaxis básica: variables, tipos, entrada/salida</td><td class="hrs">3h</td></tr><tr><td>Condicionales y bucles en Python</td><td class="hrs">4h</td></tr><tr><td>Listas, tuplas y diccionarios</td><td class="hrs">4h</td></tr><tr><td>Funciones y manejo de errores</td><td class="hrs">4h</td></tr><tr><td>Mini proyecto (calculadora, juego de lógica)</td><td class="hrs">3h</td></tr></tbody>
-            </table>
+            <p class="course-obj">Este curso introduce a Python como el primer lenguaje de programación moderno del diplomado, aprovechando su sintaxis clara para reforzar el pensamiento computacional desarrollado previamente. El estudiante configurará su entorno de desarrollo, dominará las estructuras de control y datos propias de Python, y aplicará el manejo de errores para construir programas robustos, culminando con un mini proyecto que demuestre su capacidad de resolución de problemas con este lenguaje.</p>
+            <div class="units-grid">
+              <div class="unit">
+                <div class="unit-head">
+                  <span class="unit-title">Entorno y sintaxis básica</span>
+                  <span class="unit-hrs">5h</span>
+                </div>
+                <ul class="unit-topics"><li>Instalación de Python y configuración de entorno (VS Code, Jupyter)</li><li>Variables, tipos de datos y entrada/salida</li></ul>
+              </div>
+              <div class="unit">
+                <div class="unit-head">
+                  <span class="unit-title">Estructuras de control y datos</span>
+                  <span class="unit-hrs">8h</span>
+                </div>
+                <ul class="unit-topics"><li>Condicionales y bucles en Python</li><li>Listas, tuplas y diccionarios</li></ul>
+              </div>
+              <div class="unit">
+                <div class="unit-head">
+                  <span class="unit-title">Funciones, errores y proyecto</span>
+                  <span class="unit-hrs">7h</span>
+                </div>
+                <ul class="unit-topics"><li>Funciones y manejo de excepciones</li><li>Mini proyecto: calculadora o juego de lógica</li></ul>
+              </div>
+            </div>
           </div>
         </details>
         <details class="course-card">
@@ -484,16 +552,28 @@
             <span class="course-icon">🔀</span>
             <span class="course-heading">
               <span class="course-title">Control de Versiones con Git y GitHub</span>
-              <span class="course-obj">Gestionar el control de versiones de proyectos de código de forma colaborativa.</span>
             </span>
             <span class="course-duration">20h</span>
             <span class="chev">›</span>
           </summary>
           <div class="course-body">
-            <table>
-              <thead><tr><th>Tema / Contenido</th><th>Horas</th></tr></thead>
-              <tbody><tr><td>Fundamentos de control de versiones</td><td class="hrs">2h</td></tr><tr><td>Git local: init, commit, branch, merge</td><td class="hrs">5h</td></tr><tr><td>Resolución de conflictos</td><td class="hrs">3h</td></tr><tr><td>GitHub: repositorios remotos, push/pull, forks</td><td class="hrs">4h</td></tr><tr><td>Flujo de trabajo colaborativo (Pull Requests, Issues)</td><td class="hrs">4h</td></tr><tr><td>Buenas prácticas de commits y documentación (README)</td><td class="hrs">2h</td></tr></tbody>
-            </table>
+            <p class="course-obj">Este curso desarrolla en el estudiante las competencias necesarias para gestionar el control de versiones de proyectos de software de forma profesional y colaborativa, una habilidad indispensable en cualquier entorno de desarrollo actual. El participante dominará el flujo de trabajo local con Git, la resolución de conflictos, y la colaboración remota a través de GitHub mediante Pull Requests e Issues, adoptando buenas prácticas de documentación que aplicará en todos los proyectos posteriores del diplomado.</p>
+            <div class="units-grid">
+              <div class="unit">
+                <div class="unit-head">
+                  <span class="unit-title">Fundamentos y flujo de trabajo local</span>
+                  <span class="unit-hrs">10h</span>
+                </div>
+                <ul class="unit-topics"><li>Fundamentos de control de versiones</li><li>Git local: init, commit, branch, merge</li><li>Resolución de conflictos</li></ul>
+              </div>
+              <div class="unit">
+                <div class="unit-head">
+                  <span class="unit-title">Colaboración remota con GitHub</span>
+                  <span class="unit-hrs">10h</span>
+                </div>
+                <ul class="unit-topics"><li>Repositorios remotos: push, pull, forks</li><li>Flujo de trabajo colaborativo: Pull Requests e Issues</li><li>Buenas prácticas de commits y documentación (README)</li></ul>
+              </div>
+            </div>
           </div>
         </details>
         <details class="course-card">
@@ -501,16 +581,35 @@
             <span class="course-icon">➗</span>
             <span class="course-heading">
               <span class="course-title">Matemática Aplicada a la Programación</span>
-              <span class="course-obj">Aplicar conceptos matemáticos fundamentales para la resolución de problemas de programación.</span>
             </span>
             <span class="course-duration">20h</span>
             <span class="chev">›</span>
           </summary>
           <div class="course-body">
-            <table>
-              <thead><tr><th>Tema / Contenido</th><th>Horas</th></tr></thead>
-              <tbody><tr><td>Lógica proposicional y álgebra booleana</td><td class="hrs">4h</td></tr><tr><td>Conjuntos y funciones</td><td class="hrs">3h</td></tr><tr><td>Álgebra aplicada (ecuaciones, variables)</td><td class="hrs">4h</td></tr><tr><td>Estadística descriptiva básica</td><td class="hrs">4h</td></tr><tr><td>Notación y complejidad (introducción a Big O)</td><td class="hrs">3h</td></tr><tr><td>Ejercicios aplicados en código</td><td class="hrs">2h</td></tr></tbody>
-            </table>
+            <p class="course-obj">Este curso fortalece las bases matemáticas del estudiante necesarias para el análisis y diseño de soluciones de software, conectando conceptos de lógica, álgebra y estadística directamente con la práctica de programación. Al finalizar, el participante será capaz de aplicar álgebra booleana en la construcción de condiciones lógicas, utilizar estadística descriptiva para el análisis de datos, y comprender los fundamentos de la notación de complejidad algorítmica que retomará en cursos posteriores de estructuras de datos.</p>
+            <div class="units-grid">
+              <div class="unit">
+                <div class="unit-head">
+                  <span class="unit-title">Lógica y estructuras matemáticas</span>
+                  <span class="unit-hrs">7h</span>
+                </div>
+                <ul class="unit-topics"><li>Lógica proposicional y álgebra booleana</li><li>Conjuntos y funciones</li></ul>
+              </div>
+              <div class="unit">
+                <div class="unit-head">
+                  <span class="unit-title">Álgebra y estadística aplicada</span>
+                  <span class="unit-hrs">8h</span>
+                </div>
+                <ul class="unit-topics"><li>Álgebra aplicada: ecuaciones y variables</li><li>Estadística descriptiva básica</li></ul>
+              </div>
+              <div class="unit">
+                <div class="unit-head">
+                  <span class="unit-title">Complejidad y aplicación práctica</span>
+                  <span class="unit-hrs">5h</span>
+                </div>
+                <ul class="unit-topics"><li>Introducción a la notación de complejidad (Big O)</li><li>Ejercicios matemáticos aplicados en código</li><li>Nivel Intermedio (Año 2)</li></ul>
+              </div>
+            </div>
           </div>
         </details>
       </div>
@@ -526,16 +625,35 @@
             <span class="course-icon">🔌</span>
             <span class="course-heading">
               <span class="course-title">Robótica I, Arduino</span>
-              <span class="course-obj">Programar microcontroladores Arduino para el control de sensores y actuadores.</span>
             </span>
             <span class="course-duration">20h</span>
             <span class="chev">›</span>
           </summary>
           <div class="course-body">
-            <table>
-              <thead><tr><th>Tema / Contenido</th><th>Horas</th></tr></thead>
-              <tbody><tr><td>Introducción a Arduino IDE y hardware</td><td class="hrs">2h</td></tr><tr><td>Entradas y salidas digitales/analógicas</td><td class="hrs">4h</td></tr><tr><td>Sensores básicos (temperatura, ultrasonido, luz)</td><td class="hrs">4h</td></tr><tr><td>Actuadores: motores, servos, LEDs</td><td class="hrs">4h</td></tr><tr><td>Comunicación serial</td><td class="hrs">3h</td></tr><tr><td>Proyecto integrador con Arduino</td><td class="hrs">3h</td></tr></tbody>
-            </table>
+            <p class="course-obj">Este curso capacita al estudiante para programar microcontroladores Arduino, integrando conocimientos de electrónica con lógica de programación para controlar sensores y actuadores en tiempo real. El participante aprenderá a leer señales digitales y analógicas, controlar motores y dispositivos de salida, y establecer comunicación serial entre el microcontrolador y una computadora, culminando con el desarrollo de un proyecto integrador funcional.</p>
+            <div class="units-grid">
+              <div class="unit">
+                <div class="unit-head">
+                  <span class="unit-title">Fundamentos de Arduino</span>
+                  <span class="unit-hrs">6h</span>
+                </div>
+                <ul class="unit-topics"><li>Introducción al IDE de Arduino y al hardware</li><li>Entradas y salidas digitales y analógicas</li></ul>
+              </div>
+              <div class="unit">
+                <div class="unit-head">
+                  <span class="unit-title">Sensores y actuadores</span>
+                  <span class="unit-hrs">8h</span>
+                </div>
+                <ul class="unit-topics"><li>Sensores básicos: temperatura, ultrasonido, luz</li><li>Actuadores: motores, servomotores, LEDs</li></ul>
+              </div>
+              <div class="unit">
+                <div class="unit-head">
+                  <span class="unit-title">Comunicación y proyecto</span>
+                  <span class="unit-hrs">6h</span>
+                </div>
+                <ul class="unit-topics"><li>Comunicación serial</li><li>Proyecto integrador con Arduino</li></ul>
+              </div>
+            </div>
           </div>
         </details>
         <details class="course-card">
@@ -543,16 +661,35 @@
             <span class="course-icon">🍓</span>
             <span class="course-heading">
               <span class="course-title">Robótica II, Raspberry</span>
-              <span class="course-obj">Programar Raspberry Pi como plataforma de cómputo para proyectos de robótica e IoT.</span>
             </span>
             <span class="course-duration">20h</span>
             <span class="chev">›</span>
           </summary>
           <div class="course-body">
-            <table>
-              <thead><tr><th>Tema / Contenido</th><th>Horas</th></tr></thead>
-              <tbody><tr><td>Configuración de Raspberry Pi OS</td><td class="hrs">2h</td></tr><tr><td>GPIO: control de pines desde Python</td><td class="hrs">5h</td></tr><tr><td>Integración de sensores y cámara</td><td class="hrs">4h</td></tr><tr><td>Comunicación Raspberry-Arduino</td><td class="hrs">4h</td></tr><tr><td>Introducción a IoT y conectividad remota</td><td class="hrs">3h</td></tr><tr><td>Proyecto integrador</td><td class="hrs">2h</td></tr></tbody>
-            </table>
+            <p class="course-obj">Este curso desarrolla en el estudiante la capacidad de utilizar Raspberry Pi como plataforma de cómputo embebido para proyectos de robótica e Internet de las Cosas (IoT). El participante configurará el sistema operativo, controlará pines GPIO mediante programación en Python, integrará sensores y cámaras, y establecerá comunicación entre Raspberry Pi y Arduino, sentando las bases para el proyecto integrador de robótica del nivel avanzado.</p>
+            <div class="units-grid">
+              <div class="unit">
+                <div class="unit-head">
+                  <span class="unit-title">Configuración y control de hardware</span>
+                  <span class="unit-hrs">7h</span>
+                </div>
+                <ul class="unit-topics"><li>Configuración de Raspberry Pi OS</li><li>Control de pines GPIO desde Python</li></ul>
+              </div>
+              <div class="unit">
+                <div class="unit-head">
+                  <span class="unit-title">Integración de dispositivos</span>
+                  <span class="unit-hrs">7h</span>
+                </div>
+                <ul class="unit-topics"><li>Integración de sensores y cámara</li><li>Comunicación entre Raspberry Pi y Arduino</li></ul>
+              </div>
+              <div class="unit">
+                <div class="unit-head">
+                  <span class="unit-title">IoT y proyecto</span>
+                  <span class="unit-hrs">6h</span>
+                </div>
+                <ul class="unit-topics"><li>Introducción a IoT y conectividad remota</li><li>Proyecto integrador</li></ul>
+              </div>
+            </div>
           </div>
         </details>
         <details class="course-card">
@@ -560,16 +697,35 @@
             <span class="course-icon">🗄️</span>
             <span class="course-heading">
               <span class="course-title">Introducción a la Base de Datos</span>
-              <span class="course-obj">Comprender los fundamentos del modelado y diseño de bases de datos relacionales.</span>
             </span>
             <span class="course-duration">20h</span>
             <span class="chev">›</span>
           </summary>
           <div class="course-body">
-            <table>
-              <thead><tr><th>Tema / Contenido</th><th>Horas</th></tr></thead>
-              <tbody><tr><td>Conceptos de bases de datos y modelo relacional</td><td class="hrs">3h</td></tr><tr><td>Modelado Entidad-Relación</td><td class="hrs">5h</td></tr><tr><td>Normalización (1FN, 2FN, 3FN)</td><td class="hrs">4h</td></tr><tr><td>Claves primarias y foráneas</td><td class="hrs">3h</td></tr><tr><td>Diagramas con herramientas (MySQL Workbench)</td><td class="hrs">3h</td></tr><tr><td>Diseño de una base de datos aplicada</td><td class="hrs">2h</td></tr></tbody>
-            </table>
+            <p class="course-obj">Este curso desarrolla en el estudiante las competencias fundamentales para el modelado y diseño de bases de datos relacionales, una habilidad esencial en el desarrollo de cualquier aplicación de software. El participante aprenderá a representar sistemas del mundo real mediante diagramas Entidad-Relación, aplicará las reglas de normalización para eliminar redundancia de datos, y diseñará una base de datos completa utilizando herramientas profesionales como MySQL Workbench.</p>
+            <div class="units-grid">
+              <div class="unit">
+                <div class="unit-head">
+                  <span class="unit-title">Fundamentos y modelado conceptual</span>
+                  <span class="unit-hrs">8h</span>
+                </div>
+                <ul class="unit-topics"><li>Conceptos de bases de datos y el modelo relacional</li><li>Modelado Entidad-Relación</li></ul>
+              </div>
+              <div class="unit">
+                <div class="unit-head">
+                  <span class="unit-title">Normalización y claves</span>
+                  <span class="unit-hrs">7h</span>
+                </div>
+                <ul class="unit-topics"><li>Normalización: primera, segunda y tercera forma normal</li><li>Claves primarias y foráneas</li></ul>
+              </div>
+              <div class="unit">
+                <div class="unit-head">
+                  <span class="unit-title">Herramientas y diseño aplicado</span>
+                  <span class="unit-hrs">5h</span>
+                </div>
+                <ul class="unit-topics"><li>Diagramas con MySQL Workbench</li><li>Diseño de una base de datos aplicada a un caso real</li></ul>
+              </div>
+            </div>
           </div>
         </details>
         <details class="course-card">
@@ -577,16 +733,35 @@
             <span class="course-icon">🗃️</span>
             <span class="course-heading">
               <span class="course-title">Base de Datos II, SQL/MySQL</span>
-              <span class="course-obj">Implementar y manipular bases de datos relacionales usando SQL en MySQL.</span>
             </span>
             <span class="course-duration">20h</span>
             <span class="chev">›</span>
           </summary>
           <div class="course-body">
-            <table>
-              <thead><tr><th>Tema / Contenido</th><th>Horas</th></tr></thead>
-              <tbody><tr><td>Instalación y configuración de MySQL</td><td class="hrs">2h</td></tr><tr><td>DDL: CREATE, ALTER, DROP</td><td class="hrs">3h</td></tr><tr><td>DML: INSERT, UPDATE, DELETE con confirmación de operaciones</td><td class="hrs">4h</td></tr><tr><td>Consultas SELECT: filtros, ordenamiento, agrupación</td><td class="hrs">4h</td></tr><tr><td>JOINs y subconsultas</td><td class="hrs">4h</td></tr><tr><td>Respaldos, exportación e integración con scripts externos</td><td class="hrs">3h</td></tr></tbody>
-            </table>
+            <p class="course-obj">Este curso capacita al estudiante para implementar y manipular bases de datos relacionales mediante el lenguaje SQL en el motor MySQL, cubriendo desde la creación de estructuras hasta la manipulación segura de datos. El participante aprenderá a construir consultas complejas con filtros, agrupaciones y combinaciones de tablas (JOINs), y a respaldar y exportar información, siempre bajo un enfoque de confirmación previa a operaciones destructivas como DELETE o DROP.</p>
+            <div class="units-grid">
+              <div class="unit">
+                <div class="unit-head">
+                  <span class="unit-title">Definición y manipulación de datos</span>
+                  <span class="unit-hrs">9h</span>
+                </div>
+                <ul class="unit-topics"><li>Instalación y configuración de MySQL</li><li>DDL: CREATE, ALTER, DROP</li><li>DML: INSERT, UPDATE, DELETE con confirmación previa de operaciones</li></ul>
+              </div>
+              <div class="unit">
+                <div class="unit-head">
+                  <span class="unit-title">Consultas avanzadas</span>
+                  <span class="unit-hrs">7h</span>
+                </div>
+                <ul class="unit-topics"><li>Consultas SELECT: filtros, ordenamiento y agrupación</li><li>JOINs y subconsultas</li></ul>
+              </div>
+              <div class="unit">
+                <div class="unit-head">
+                  <span class="unit-title">Respaldo e integración</span>
+                  <span class="unit-hrs">4h</span>
+                </div>
+                <ul class="unit-topics"><li>Respaldos y exportación de datos</li><li>Integración de consultas con scripts externos (.bat)</li></ul>
+              </div>
+            </div>
           </div>
         </details>
         <details class="course-card">
@@ -594,50 +769,121 @@
             <span class="course-icon">🧱</span>
             <span class="course-heading">
               <span class="course-title">Programación II, Programación Orientada a Objetos</span>
-              <span class="course-obj">Aplicar el paradigma de programación orientada a objetos en la resolución de problemas.</span>
             </span>
             <span class="course-duration">20h</span>
             <span class="chev">›</span>
           </summary>
           <div class="course-body">
-            <table>
-              <thead><tr><th>Tema / Contenido</th><th>Horas</th></tr></thead>
-              <tbody><tr><td>Clases, objetos y atributos</td><td class="hrs">3h</td></tr><tr><td>Encapsulamiento y métodos</td><td class="hrs">3h</td></tr><tr><td>Herencia</td><td class="hrs">4h</td></tr><tr><td>Polimorfismo</td><td class="hrs">4h</td></tr><tr><td>Interfaces y clases abstractas</td><td class="hrs">3h</td></tr><tr><td>Proyecto POO integrador</td><td class="hrs">3h</td></tr></tbody>
-            </table>
+            <p class="course-obj">Este curso introduce al estudiante en el paradigma de programación orientada a objetos, un modelo fundamental para el desarrollo de software escalable y mantenible. El participante aprenderá a modelar clases y objetos, aplicar encapsulamiento, herencia y polimorfismo, y utilizar interfaces y clases abstractas para diseñar soluciones flexibles, consolidando estos conceptos mediante un proyecto integrador orientado a objetos.</p>
+            <div class="units-grid">
+              <div class="unit">
+                <div class="unit-head">
+                  <span class="unit-title">Clases y objetos</span>
+                  <span class="unit-hrs">6h</span>
+                </div>
+                <ul class="unit-topics"><li>Clases, objetos y atributos</li><li>Encapsulamiento y métodos</li></ul>
+              </div>
+              <div class="unit">
+                <div class="unit-head">
+                  <span class="unit-title">Herencia y polimorfismo</span>
+                  <span class="unit-hrs">8h</span>
+                </div>
+                <ul class="unit-topics"><li>Herencia</li><li>Polimorfismo</li></ul>
+              </div>
+              <div class="unit">
+                <div class="unit-head">
+                  <span class="unit-title">Abstracción y proyecto</span>
+                  <span class="unit-hrs">6h</span>
+                </div>
+                <ul class="unit-topics"><li>Interfaces y clases abstractas</li><li>Proyecto integrador de programación orientada a objetos</li></ul>
+              </div>
+            </div>
           </div>
         </details>
         <details class="course-card">
           <summary>
-            <span class="course-icon">⚙️</span>
+            <span class="course-icon">🧱</span>
             <span class="course-heading">
               <span class="course-title">Laboratorio de Programación II, C++</span>
-              <span class="course-obj">Aplicar programación orientada a objetos y manejo de memoria en C++ mediante ejercicios prácticos de laboratorio.</span>
             </span>
             <span class="course-duration">20h</span>
             <span class="chev">›</span>
           </summary>
           <div class="course-body">
-            <table>
-              <thead><tr><th>Tema / Contenido</th><th>Horas</th></tr></thead>
-              <tbody><tr><td>Sintaxis de C++ y diferencias con otros lenguajes</td><td class="hrs">2h</td></tr><tr><td>Punteros y manejo de memoria</td><td class="hrs">5h</td></tr><tr><td>Estructuras y clases en C++</td><td class="hrs">4h</td></tr><tr><td>STL: vectores, listas, mapas</td><td class="hrs">4h</td></tr><tr><td>Compilación y depuración</td><td class="hrs">3h</td></tr><tr><td>Proyecto de laboratorio</td><td class="hrs">2h</td></tr></tbody>
-            </table>
+            <p class="course-obj">Este curso de laboratorio profundiza en la aplicación práctica de la programación orientada a objetos y el manejo de memoria mediante el lenguaje C++, complementando los conceptos teóricos vistos en Programación II. El participante trabajará con punteros, estructuras y clases, utilizará la biblioteca estándar de plantillas (STL), y desarrollará habilidades de compilación y depuración de código, culminando con un proyecto de laboratorio que demuestre dominio del lenguaje.</p>
+            <div class="units-grid">
+              <div class="unit">
+                <div class="unit-head">
+                  <span class="unit-title">Sintaxis y manejo de memoria</span>
+                  <span class="unit-hrs">7h</span>
+                </div>
+                <ul class="unit-topics"><li>Sintaxis de C++ y diferencias con otros lenguajes</li><li>Punteros y manejo de memoria</li></ul>
+              </div>
+              <div class="unit">
+                <div class="unit-head">
+                  <span class="unit-title">Estructuras, clases y STL</span>
+                  <span class="unit-hrs">8h</span>
+                </div>
+                <ul class="unit-topics"><li>Estructuras y clases en C++</li><li>Biblioteca estándar de plantillas (STL): vectores, listas, mapas</li></ul>
+              </div>
+              <div class="unit">
+                <div class="unit-head">
+                  <span class="unit-title">Depuración y proyecto</span>
+                  <span class="unit-hrs">5h</span>
+                </div>
+                <ul class="unit-topics"><li>Compilación y depuración de código</li><li>Proyecto de laboratorio</li></ul>
+              </div>
+            </div>
           </div>
         </details>
         <details class="course-card">
           <summary>
-            <span class="course-icon">🖨️</span>
+            <span class="course-icon">🔬</span>
             <span class="course-heading">
-              <span class="course-title">Diseño 3D e Impresión 3D</span>
-              <span class="course-obj">Profundizar en modelado 3D avanzado e integrarlo con proyectos de programación y robótica.</span>
+              <span class="course-title">Tecnologías Emergentes, Hardware y Software de Nueva Generación</span>
             </span>
             <span class="course-duration">20h</span>
             <span class="chev">›</span>
           </summary>
           <div class="course-body">
-            <table>
-              <thead><tr><th>Tema / Contenido</th><th>Horas</th></tr></thead>
-              <tbody><tr><td>Modelado avanzado en Blender</td><td class="hrs">5h</td></tr><tr><td>Modelado paramétrico (Fusion 360 / OpenSCAD)</td><td class="hrs">5h</td></tr><tr><td>Optimización de impresión (soportes, relleno, calibración)</td><td class="hrs">4h</td></tr><tr><td>Diseño de piezas funcionales para proyectos de robótica</td><td class="hrs">4h</td></tr><tr><td>Proyecto de diseño e impresión</td><td class="hrs">2h</td></tr></tbody>
-            </table>
+            <p class="course-obj">Este curso expone al estudiante a las tecnologías de hardware y software más recientes que están redefiniendo la frontera entre la programación, la ciencia aplicada y la industria. El participante aprenderá a controlar y procesar datos provenientes de dispositivos digitales avanzados como microscopios, telescopios y displays holográficos, y se introducirá conceptualmente en la computación cuántica, comprendiendo sus diferencias fundamentales frente a la computación clásica y su potencial impacto futuro en el desarrollo de software, ampliando así su visión sobre las tecnologías emergentes que marcarán su carrera profesional.</p>
+            <div class="units-grid">
+              <div class="unit">
+                <div class="unit-head">
+                  <span class="unit-title">Microscopía digital aplicada</span>
+                  <span class="unit-hrs">4h</span>
+                </div>
+                <ul class="unit-topics"><li>Uso de microscopios digitales USB/WiFi para captura de imágenes</li><li>Introducción conceptual a la microscopía electrónica y sus aplicaciones</li><li>Acceso remoto a instalaciones de microscopía electrónica</li></ul>
+              </div>
+              <div class="unit">
+                <div class="unit-head">
+                  <span class="unit-title">Astronomía computacional y telescopios digitales</span>
+                  <span class="unit-hrs">4h</span>
+                </div>
+                <ul class="unit-topics"><li>Control de telescopios motorizados mediante software (protocolos ASCOM/INDI)</li><li>Procesamiento de imágenes astronómicas con Python</li><li>Plataformas de simulación astronómica (Stellarium)</li></ul>
+              </div>
+              <div class="unit">
+                <div class="unit-head">
+                  <span class="unit-title">Visualización holográfica y displays 3D</span>
+                  <span class="unit-hrs">4h</span>
+                </div>
+                <ul class="unit-topics"><li>Fundamentos de pantallas holográficas y ventiladores holográficos LED</li><li>Creación de contenido 3D para displays holográficos</li><li>Casos de uso en educación y visualización científica</li></ul>
+              </div>
+              <div class="unit">
+                <div class="unit-head">
+                  <span class="unit-title">Introducción a la Computación Cuántica</span>
+                  <span class="unit-hrs">4h</span>
+                </div>
+                <ul class="unit-topics"><li>Fundamentos: qubits, superposición y entrelazamiento cuántico</li><li>Diferencias entre computación clásica y computación cuántica</li><li>Introducción a plataformas de simulación cuántica (Qiskit u otras)</li><li>Aplicaciones potenciales y estado actual de la industria</li></ul>
+              </div>
+              <div class="unit">
+                <div class="unit-head">
+                  <span class="unit-title">Panorama de hardware/software emergente y proyecto integrador</span>
+                  <span class="unit-hrs">4h</span>
+                </div>
+                <ul class="unit-topics"><li>Introducción a sensores biométricos, drones programables e impresión 4D</li><li>Proyecto integrador: captura, procesamiento o visualización de datos desde uno de los dispositivos vistos en el curso</li></ul>
+              </div>
+            </div>
           </div>
         </details>
         <details class="course-card">
@@ -645,16 +891,35 @@
             <span class="course-icon">🐍</span>
             <span class="course-heading">
               <span class="course-title">Programación III, Python</span>
-              <span class="course-obj">Profundizar en Python aplicado a proyectos intermedios con librerías externas.</span>
             </span>
             <span class="course-duration">20h</span>
             <span class="chev">›</span>
           </summary>
           <div class="course-body">
-            <table>
-              <thead><tr><th>Tema / Contenido</th><th>Horas</th></tr></thead>
-              <tbody><tr><td>Programación orientada a objetos en Python</td><td class="hrs">4h</td></tr><tr><td>Manejo de archivos y excepciones</td><td class="hrs">3h</td></tr><tr><td>Librerías externas y entornos virtuales (venv, pip)</td><td class="hrs">3h</td></tr><tr><td>Manipulación de datos con pandas</td><td class="hrs">4h</td></tr><tr><td>Automatización de tareas con Python</td><td class="hrs">3h</td></tr><tr><td>Proyecto integrador</td><td class="hrs">3h</td></tr></tbody>
-            </table>
+            <p class="course-obj">Este curso profundiza el dominio de Python del estudiante, incorporando programación orientada a objetos, manejo de archivos y excepciones, y el uso de librerías externas para el análisis de datos. El participante aprenderá a gestionar entornos virtuales, manipular datos con la librería pandas, y automatizar tareas, culminando con un proyecto integrador que refleje un caso de uso profesional de Python.</p>
+            <div class="units-grid">
+              <div class="unit">
+                <div class="unit-head">
+                  <span class="unit-title">POO y manejo de errores en Python</span>
+                  <span class="unit-hrs">7h</span>
+                </div>
+                <ul class="unit-topics"><li>Programación orientada a objetos en Python</li><li>Manejo de archivos y excepciones</li></ul>
+              </div>
+              <div class="unit">
+                <div class="unit-head">
+                  <span class="unit-title">Librerías y análisis de datos</span>
+                  <span class="unit-hrs">8h</span>
+                </div>
+                <ul class="unit-topics"><li>Entornos virtuales (venv) y gestión de paquetes (pip)</li><li>Manipulación de datos con pandas</li></ul>
+              </div>
+              <div class="unit">
+                <div class="unit-head">
+                  <span class="unit-title">Automatización y proyecto</span>
+                  <span class="unit-hrs">5h</span>
+                </div>
+                <ul class="unit-topics"><li>Automatización de tareas con Python</li><li>Proyecto integrador</li></ul>
+              </div>
+            </div>
           </div>
         </details>
         <details class="course-card">
@@ -662,16 +927,35 @@
             <span class="course-icon">🌐</span>
             <span class="course-heading">
               <span class="course-title">Programación de Páginas Web I, PHP/JavaScript</span>
-              <span class="course-obj">Desarrollar páginas web dinámicas básicas combinando HTML, JavaScript y PHP.</span>
             </span>
             <span class="course-duration">20h</span>
             <span class="chev">›</span>
           </summary>
           <div class="course-body">
-            <table>
-              <thead><tr><th>Tema / Contenido</th><th>Horas</th></tr></thead>
-              <tbody><tr><td>Repaso de HTML/CSS y JavaScript básico</td><td class="hrs">3h</td></tr><tr><td>DOM y eventos en JavaScript</td><td class="hrs">4h</td></tr><tr><td>Introducción a PHP y sintaxis</td><td class="hrs">3h</td></tr><tr><td>Formularios y validación cliente/servidor</td><td class="hrs">4h</td></tr><tr><td>Conexión PHP-MySQL</td><td class="hrs">4h</td></tr><tr><td>Proyecto: sitio web dinámico simple</td><td class="hrs">2h</td></tr></tbody>
-            </table>
+            <p class="course-obj">Este curso introduce al estudiante en el desarrollo web dinámico, combinando JavaScript para la interactividad del lado del cliente con PHP para la lógica del lado del servidor. El participante aprenderá a manipular el DOM, validar formularios en ambos extremos (cliente y servidor), y conectar aplicaciones PHP con bases de datos MySQL, culminando con el desarrollo de un sitio web dinámico funcional.</p>
+            <div class="units-grid">
+              <div class="unit">
+                <div class="unit-head">
+                  <span class="unit-title">JavaScript y el DOM</span>
+                  <span class="unit-hrs">7h</span>
+                </div>
+                <ul class="unit-topics"><li>Repaso de HTML/CSS y JavaScript básico</li><li>DOM y manejo de eventos</li></ul>
+              </div>
+              <div class="unit">
+                <div class="unit-head">
+                  <span class="unit-title">PHP y formularios</span>
+                  <span class="unit-hrs">7h</span>
+                </div>
+                <ul class="unit-topics"><li>Introducción a PHP y su sintaxis</li><li>Formularios y validación cliente/servidor</li></ul>
+              </div>
+              <div class="unit">
+                <div class="unit-head">
+                  <span class="unit-title">Integración con base de datos y proyecto</span>
+                  <span class="unit-hrs">6h</span>
+                </div>
+                <ul class="unit-topics"><li>Conexión de PHP con MySQL</li><li>Proyecto: sitio web dinámico simple</li></ul>
+              </div>
+            </div>
           </div>
         </details>
         <details class="course-card">
@@ -679,16 +963,35 @@
             <span class="course-icon">🌳</span>
             <span class="course-heading">
               <span class="course-title">Estructuras de Datos y Algoritmos</span>
-              <span class="course-obj">Implementar estructuras de datos fundamentales y analizar la eficiencia de algoritmos.</span>
             </span>
             <span class="course-duration">20h</span>
             <span class="chev">›</span>
           </summary>
           <div class="course-body">
-            <table>
-              <thead><tr><th>Tema / Contenido</th><th>Horas</th></tr></thead>
-              <tbody><tr><td>Complejidad algorítmica (Big O)</td><td class="hrs">3h</td></tr><tr><td>Pilas y colas</td><td class="hrs">3h</td></tr><tr><td>Listas enlazadas</td><td class="hrs">3h</td></tr><tr><td>Árboles y recorridos</td><td class="hrs">4h</td></tr><tr><td>Algoritmos de búsqueda y ordenamiento</td><td class="hrs">4h</td></tr><tr><td>Ejercicios de resolución de problemas</td><td class="hrs">3h</td></tr></tbody>
-            </table>
+            <p class="course-obj">Este curso desarrolla en el estudiante la capacidad de implementar estructuras de datos fundamentales y analizar la eficiencia de los algoritmos que las manipulan, competencias esenciales para escribir software eficiente y escalable. El participante trabajará con pilas, colas, listas enlazadas y árboles, y aplicará algoritmos clásicos de búsqueda y ordenamiento, fortaleciendo su capacidad de resolución de problemas mediante ejercicios prácticos de análisis de complejidad.</p>
+            <div class="units-grid">
+              <div class="unit">
+                <div class="unit-head">
+                  <span class="unit-title">Complejidad y estructuras lineales</span>
+                  <span class="unit-hrs">9h</span>
+                </div>
+                <ul class="unit-topics"><li>Complejidad algorítmica (notación Big O)</li><li>Pilas y colas</li><li>Listas enlazadas</li></ul>
+              </div>
+              <div class="unit">
+                <div class="unit-head">
+                  <span class="unit-title">Estructuras no lineales y algoritmos</span>
+                  <span class="unit-hrs">7h</span>
+                </div>
+                <ul class="unit-topics"><li>Árboles y sus recorridos</li><li>Algoritmos de búsqueda y ordenamiento</li></ul>
+              </div>
+              <div class="unit">
+                <div class="unit-head">
+                  <span class="unit-title">Resolución de problemas</span>
+                  <span class="unit-hrs">4h</span>
+                </div>
+                <ul class="unit-topics"><li>Ejercicios prácticos de resolución de problemas algorítmicos</li></ul>
+              </div>
+            </div>
           </div>
         </details>
         <details class="course-card">
@@ -696,16 +999,35 @@
             <span class="course-icon">🍃</span>
             <span class="course-heading">
               <span class="course-title">Bases de Datos NoSQL (MongoDB) y Modelado de Datos</span>
-              <span class="course-obj">Diseñar e implementar bases de datos NoSQL orientadas a documentos.</span>
             </span>
             <span class="course-duration">20h</span>
             <span class="chev">›</span>
           </summary>
           <div class="course-body">
-            <table>
-              <thead><tr><th>Tema / Contenido</th><th>Horas</th></tr></thead>
-              <tbody><tr><td>Diferencias entre bases de datos SQL y NoSQL</td><td class="hrs">2h</td></tr><tr><td>Instalación y configuración de MongoDB</td><td class="hrs">2h</td></tr><tr><td>Modelado de documentos (JSON/BSON)</td><td class="hrs">4h</td></tr><tr><td>Operaciones CRUD en MongoDB</td><td class="hrs">4h</td></tr><tr><td>Agregaciones y consultas avanzadas</td><td class="hrs">4h</td></tr><tr><td>Integración de MongoDB con una aplicación</td><td class="hrs">4h</td></tr></tbody>
-            </table>
+            <p class="course-obj">Este curso introduce al estudiante en el paradigma de bases de datos no relacionales, complementando el conocimiento de SQL adquirido previamente con un enfoque orientado a documentos mediante MongoDB. El participante aprenderá a modelar datos en formato JSON/BSON, ejecutar operaciones CRUD, construir agregaciones avanzadas, e integrar MongoDB como capa de persistencia en una aplicación real.</p>
+            <div class="units-grid">
+              <div class="unit">
+                <div class="unit-head">
+                  <span class="unit-title">Fundamentos y modelado</span>
+                  <span class="unit-hrs">6h</span>
+                </div>
+                <ul class="unit-topics"><li>Diferencias entre bases de datos SQL y NoSQL</li><li>Instalación y configuración de MongoDB</li><li>Modelado de documentos (JSON/BSON)</li></ul>
+              </div>
+              <div class="unit">
+                <div class="unit-head">
+                  <span class="unit-title">Operaciones y consultas</span>
+                  <span class="unit-hrs">8h</span>
+                </div>
+                <ul class="unit-topics"><li>Operaciones CRUD en MongoDB</li><li>Agregaciones y consultas avanzadas</li></ul>
+              </div>
+              <div class="unit">
+                <div class="unit-head">
+                  <span class="unit-title">Integración con aplicaciones</span>
+                  <span class="unit-hrs">6h</span>
+                </div>
+                <ul class="unit-topics"><li>Integración de MongoDB con una aplicación</li></ul>
+              </div>
+            </div>
           </div>
         </details>
         <details class="course-card">
@@ -713,16 +1035,35 @@
             <span class="course-icon">🔗</span>
             <span class="course-heading">
               <span class="course-title">Desarrollo de APIs REST</span>
-              <span class="course-obj">Diseñar y consumir APIs REST para conectar backend, bases de datos y aplicaciones cliente.</span>
             </span>
             <span class="course-duration">20h</span>
             <span class="chev">›</span>
           </summary>
           <div class="course-body">
-            <table>
-              <thead><tr><th>Tema / Contenido</th><th>Horas</th></tr></thead>
-              <tbody><tr><td>Fundamentos de arquitectura REST y protocolo HTTP</td><td class="hrs">3h</td></tr><tr><td>Diseño de endpoints y verbos HTTP</td><td class="hrs">3h</td></tr><tr><td>Creación de una API con Node.js/Express</td><td class="hrs">5h</td></tr><tr><td>Autenticación básica (tokens, JWT)</td><td class="hrs">3h</td></tr><tr><td>Consumo de APIs desde frontend/Postman</td><td class="hrs">3h</td></tr><tr><td>Proyecto integrador: API conectada a base de datos</td><td class="hrs">3h</td></tr></tbody>
-            </table>
+            <p class="course-obj">Este curso capacita al estudiante para diseñar y consumir interfaces de programación de aplicaciones (APIs) bajo el estilo arquitectónico REST, el estándar más utilizado actualmente para conectar backend, bases de datos y aplicaciones cliente. El participante construirá una API funcional con Node.js/Express, implementará autenticación básica mediante tokens JWT, y consumirá dicha API desde herramientas como Postman, culminando con un proyecto integrador conectado a una base de datos.</p>
+            <div class="units-grid">
+              <div class="unit">
+                <div class="unit-head">
+                  <span class="unit-title">Fundamentos y diseño de APIs</span>
+                  <span class="unit-hrs">6h</span>
+                </div>
+                <ul class="unit-topics"><li>Arquitectura REST y protocolo HTTP</li><li>Diseño de endpoints y verbos HTTP</li></ul>
+              </div>
+              <div class="unit">
+                <div class="unit-head">
+                  <span class="unit-title">Implementación y seguridad</span>
+                  <span class="unit-hrs">8h</span>
+                </div>
+                <ul class="unit-topics"><li>Creación de una API con Node.js/Express</li><li>Autenticación básica con tokens (JWT)</li></ul>
+              </div>
+              <div class="unit">
+                <div class="unit-head">
+                  <span class="unit-title">Consumo e integración</span>
+                  <span class="unit-hrs">6h</span>
+                </div>
+                <ul class="unit-topics"><li>Consumo de APIs desde frontend y Postman</li><li>Proyecto integrador: API conectada a base de datos</li><li>Nivel Avanzado (Año 3)</li></ul>
+              </div>
+            </div>
           </div>
         </details>
       </div>
@@ -738,16 +1079,35 @@
             <span class="course-icon">📡</span>
             <span class="course-heading">
               <span class="course-title">Redes de Computadoras II, Servidores (Firewall, Hosting, Mail)</span>
-              <span class="course-obj">Configurar y administrar servicios de red y servidores esenciales.</span>
             </span>
             <span class="course-duration">20h</span>
             <span class="chev">›</span>
           </summary>
           <div class="course-body">
-            <table>
-              <thead><tr><th>Tema / Contenido</th><th>Horas</th></tr></thead>
-              <tbody><tr><td>Fundamentos de redes TCP/IP (repaso)</td><td class="hrs">2h</td></tr><tr><td>Configuración de servidores web (Apache/Nginx)</td><td class="hrs">4h</td></tr><tr><td>Firewall y reglas de seguridad de red</td><td class="hrs">4h</td></tr><tr><td>Hosting: dominios, DNS, certificados SSL</td><td class="hrs">4h</td></tr><tr><td>Configuración de servidor de correo básico</td><td class="hrs">3h</td></tr><tr><td>Monitoreo y mantenimiento de servidores</td><td class="hrs">3h</td></tr></tbody>
-            </table>
+            <p class="course-obj">Este curso capacita al estudiante para configurar y administrar servicios de red y servidores esenciales para el funcionamiento de aplicaciones en producción. El participante aprenderá a implementar servidores web, configurar reglas de firewall para proteger la infraestructura, gestionar dominios y certificados SSL, y configurar servicios de correo básicos, adquiriendo una visión integral de la infraestructura sobre la que se despliega el software.</p>
+            <div class="units-grid">
+              <div class="unit">
+                <div class="unit-head">
+                  <span class="unit-title">Fundamentos y servidores web</span>
+                  <span class="unit-hrs">6h</span>
+                </div>
+                <ul class="unit-topics"><li>Fundamentos de redes TCP/IP (repaso)</li><li>Configuración de servidores web (Apache/Nginx)</li></ul>
+              </div>
+              <div class="unit">
+                <div class="unit-head">
+                  <span class="unit-title">Seguridad y hosting</span>
+                  <span class="unit-hrs">8h</span>
+                </div>
+                <ul class="unit-topics"><li>Firewall y reglas de seguridad de red</li><li>Hosting: dominios, DNS y certificados SSL</li></ul>
+              </div>
+              <div class="unit">
+                <div class="unit-head">
+                  <span class="unit-title">Correo y monitoreo</span>
+                  <span class="unit-hrs">6h</span>
+                </div>
+                <ul class="unit-topics"><li>Configuración de servidor de correo básico</li><li>Monitoreo y mantenimiento de servidores</li></ul>
+              </div>
+            </div>
           </div>
         </details>
         <details class="course-card">
@@ -755,16 +1115,35 @@
             <span class="course-icon">📱</span>
             <span class="course-heading">
               <span class="course-title">Aplicaciones Móviles Multiplataforma (React Native / Flutter)</span>
-              <span class="course-obj">Desarrollar aplicaciones móviles multiplataforma para Android e iOS.</span>
             </span>
             <span class="course-duration">20h</span>
             <span class="chev">›</span>
           </summary>
           <div class="course-body">
-            <table>
-              <thead><tr><th>Tema / Contenido</th><th>Horas</th></tr></thead>
-              <tbody><tr><td>Introducción al desarrollo móvil multiplataforma</td><td class="hrs">2h</td></tr><tr><td>Configuración del entorno (React Native/Flutter)</td><td class="hrs">3h</td></tr><tr><td>Componentes de interfaz y navegación</td><td class="hrs">4h</td></tr><tr><td>Manejo de estado y datos</td><td class="hrs">4h</td></tr><tr><td>Consumo de APIs REST desde la aplicación</td><td class="hrs">4h</td></tr><tr><td>Proyecto integrador: aplicación funcional</td><td class="hrs">3h</td></tr></tbody>
-            </table>
+            <p class="course-obj">Este curso desarrolla en el estudiante la capacidad de crear aplicaciones móviles funcionales para Android e iOS a partir de una única base de código, utilizando un framework multiplataforma moderno (React Native o Flutter). El participante aprenderá a construir interfaces de usuario, gestionar el estado de la aplicación, y consumir APIs REST desde el dispositivo móvil, culminando con el desarrollo de una aplicación funcional completa.</p>
+            <div class="units-grid">
+              <div class="unit">
+                <div class="unit-head">
+                  <span class="unit-title">Fundamentos del desarrollo móvil</span>
+                  <span class="unit-hrs">5h</span>
+                </div>
+                <ul class="unit-topics"><li>Introducción al desarrollo móvil multiplataforma</li><li>Configuración del entorno (React Native/Flutter)</li></ul>
+              </div>
+              <div class="unit">
+                <div class="unit-head">
+                  <span class="unit-title">Interfaz y estado</span>
+                  <span class="unit-hrs">8h</span>
+                </div>
+                <ul class="unit-topics"><li>Componentes de interfaz y navegación</li><li>Manejo de estado y datos</li></ul>
+              </div>
+              <div class="unit">
+                <div class="unit-head">
+                  <span class="unit-title">Conectividad y proyecto</span>
+                  <span class="unit-hrs">7h</span>
+                </div>
+                <ul class="unit-topics"><li>Consumo de APIs REST desde la aplicación</li><li>Proyecto integrador: aplicación funcional</li></ul>
+              </div>
+            </div>
           </div>
         </details>
         <details class="course-card">
@@ -772,16 +1151,35 @@
             <span class="course-icon">🤖</span>
             <span class="course-heading">
               <span class="course-title">Proyecto Robótica Arduino-Raspberry</span>
-              <span class="course-obj">Integrar Arduino y Raspberry Pi en un proyecto robótico funcional completo.</span>
             </span>
             <span class="course-duration">20h</span>
             <span class="chev">›</span>
           </summary>
           <div class="course-body">
-            <table>
-              <thead><tr><th>Tema / Contenido</th><th>Horas</th></tr></thead>
-              <tbody><tr><td>Planificación y diseño del proyecto</td><td class="hrs">2h</td></tr><tr><td>Integración de hardware (sensores/actuadores)</td><td class="hrs">4h</td></tr><tr><td>Comunicación y control entre Arduino y Raspberry</td><td class="hrs">4h</td></tr><tr><td>Programación de la lógica de control</td><td class="hrs">5h</td></tr><tr><td>Pruebas, ajustes y depuración</td><td class="hrs">3h</td></tr><tr><td>Presentación y documentación del proyecto</td><td class="hrs">2h</td></tr></tbody>
-            </table>
+            <p class="course-obj">Este curso integra los conocimientos de robótica adquiridos en el nivel intermedio (Arduino y Raspberry Pi) en el desarrollo de un proyecto robótico funcional y completo. El participante planificará el alcance del proyecto, integrará hardware y lógica de control, establecerá comunicación entre ambas plataformas, y documentará y presentará el resultado final, demostrando su capacidad de integrar sistemas embebidos complejos.</p>
+            <div class="units-grid">
+              <div class="unit">
+                <div class="unit-head">
+                  <span class="unit-title">Planificación e integración de hardware</span>
+                  <span class="unit-hrs">6h</span>
+                </div>
+                <ul class="unit-topics"><li>Planificación y diseño del proyecto</li><li>Integración de hardware: sensores y actuadores</li></ul>
+              </div>
+              <div class="unit">
+                <div class="unit-head">
+                  <span class="unit-title">Comunicación y programación</span>
+                  <span class="unit-hrs">9h</span>
+                </div>
+                <ul class="unit-topics"><li>Comunicación y control entre Arduino y Raspberry Pi</li><li>Programación de la lógica de control</li></ul>
+              </div>
+              <div class="unit">
+                <div class="unit-head">
+                  <span class="unit-title">Pruebas y presentación</span>
+                  <span class="unit-hrs">5h</span>
+                </div>
+                <ul class="unit-topics"><li>Pruebas, ajustes y depuración</li><li>Presentación y documentación del proyecto</li></ul>
+              </div>
+            </div>
           </div>
         </details>
         <details class="course-card">
@@ -789,16 +1187,35 @@
             <span class="course-icon">📐</span>
             <span class="course-heading">
               <span class="course-title">Ingeniería de Software, Análisis y Diseño de Sistemas</span>
-              <span class="course-obj">Aplicar metodologías de ingeniería de software para el análisis y diseño de sistemas.</span>
             </span>
             <span class="course-duration">20h</span>
             <span class="chev">›</span>
           </summary>
           <div class="course-body">
-            <table>
-              <thead><tr><th>Tema / Contenido</th><th>Horas</th></tr></thead>
-              <tbody><tr><td>Ciclo de vida del software y metodologías ágiles (Scrum)</td><td class="hrs">4h</td></tr><tr><td>Levantamiento y análisis de requisitos</td><td class="hrs">3h</td></tr><tr><td>Diagramas UML (casos de uso, clases, secuencia)</td><td class="hrs">5h</td></tr><tr><td>Diseño de arquitectura de software</td><td class="hrs">4h</td></tr><tr><td>Documentación técnica</td><td class="hrs">2h</td></tr><tr><td>Taller de análisis de un caso real</td><td class="hrs">2h</td></tr></tbody>
-            </table>
+            <p class="course-obj">Este curso introduce al estudiante en las metodologías formales de la ingeniería de software para el análisis y diseño de sistemas de mediana y gran escala. El participante aprenderá a aplicar metodologías ágiles como Scrum, levantar y documentar requisitos, modelar sistemas mediante diagramas UML, y diseñar arquitecturas de software, aplicando estos conocimientos en el análisis de un caso real.</p>
+            <div class="units-grid">
+              <div class="unit">
+                <div class="unit-head">
+                  <span class="unit-title">Metodologías y requisitos</span>
+                  <span class="unit-hrs">7h</span>
+                </div>
+                <ul class="unit-topics"><li>Ciclo de vida del software y metodologías ágiles (Scrum)</li><li>Levantamiento y análisis de requisitos</li></ul>
+              </div>
+              <div class="unit">
+                <div class="unit-head">
+                  <span class="unit-title">Modelado y arquitectura</span>
+                  <span class="unit-hrs">9h</span>
+                </div>
+                <ul class="unit-topics"><li>Diagramas UML: casos de uso, clases y secuencia</li><li>Diseño de arquitectura de software</li></ul>
+              </div>
+              <div class="unit">
+                <div class="unit-head">
+                  <span class="unit-title">Documentación y aplicación práctica</span>
+                  <span class="unit-hrs">4h</span>
+                </div>
+                <ul class="unit-topics"><li>Documentación técnica</li><li>Taller de análisis de un caso real</li></ul>
+              </div>
+            </div>
           </div>
         </details>
         <details class="course-card">
@@ -806,33 +1223,71 @@
             <span class="course-icon">🚀</span>
             <span class="course-heading">
               <span class="course-title">Proyecto de Software, Programación/Publicación de Software (grupal)</span>
-              <span class="course-obj">Desarrollar y publicar un proyecto de software grupal aplicando lo aprendido en el diplomado.</span>
             </span>
             <span class="course-duration">20h</span>
             <span class="chev">›</span>
           </summary>
           <div class="course-body">
-            <table>
-              <thead><tr><th>Tema / Contenido</th><th>Horas</th></tr></thead>
-              <tbody><tr><td>Planificación del proyecto (alcance, roles)</td><td class="hrs">2h</td></tr><tr><td>Desarrollo colaborativo con Git</td><td class="hrs">3h</td></tr><tr><td>Implementación (backend, frontend y base de datos)</td><td class="hrs">7h</td></tr><tr><td>Pruebas y control de calidad</td><td class="hrs">3h</td></tr><tr><td>Publicación y despliegue del proyecto</td><td class="hrs">3h</td></tr><tr><td>Presentación final</td><td class="hrs">2h</td></tr></tbody>
-            </table>
+            <p class="course-obj">Este curso culmina el diplomado mediante el desarrollo de un proyecto de software grupal que integra todas las competencias adquiridas: bases de datos, backend, frontend, control de versiones y despliegue. El participante planificará el alcance y roles del equipo, implementará una solución completa (full stack), aplicará pruebas de calidad, y publicará el proyecto en un entorno real, presentando el resultado final ante un panel evaluador.</p>
+            <div class="units-grid">
+              <div class="unit">
+                <div class="unit-head">
+                  <span class="unit-title">Planificación y desarrollo colaborativo</span>
+                  <span class="unit-hrs">5h</span>
+                </div>
+                <ul class="unit-topics"><li>Planificación del proyecto: alcance y roles</li><li>Desarrollo colaborativo con Git</li></ul>
+              </div>
+              <div class="unit">
+                <div class="unit-head">
+                  <span class="unit-title">Implementación full stack</span>
+                  <span class="unit-hrs">7h</span>
+                </div>
+                <ul class="unit-topics"><li>Implementación de backend, frontend y base de datos</li></ul>
+              </div>
+              <div class="unit">
+                <div class="unit-head">
+                  <span class="unit-title">Calidad, publicación y cierre</span>
+                  <span class="unit-hrs">8h</span>
+                </div>
+                <ul class="unit-topics"><li>Pruebas y control de calidad</li><li>Publicación y despliegue del proyecto</li><li>Presentación final</li></ul>
+              </div>
+            </div>
           </div>
         </details>
         <details class="course-card">
           <summary>
-            <span class="course-icon">⚛️</span>
+            <span class="course-icon">🌐</span>
             <span class="course-heading">
               <span class="course-title">Programación de Páginas Web II, Frameworks Modernos (React/Node.js)</span>
-              <span class="course-obj">Desarrollar aplicaciones web completas usando un framework frontend y Node.js en el backend.</span>
             </span>
             <span class="course-duration">20h</span>
             <span class="chev">›</span>
           </summary>
           <div class="course-body">
-            <table>
-              <thead><tr><th>Tema / Contenido</th><th>Horas</th></tr></thead>
-              <tbody><tr><td>Introducción a Node.js y npm</td><td class="hrs">2h</td></tr><tr><td>Fundamentos de React: componentes y props</td><td class="hrs">4h</td></tr><tr><td>Estado y hooks en React</td><td class="hrs">4h</td></tr><tr><td>Backend con Express y conexión a base de datos</td><td class="hrs">4h</td></tr><tr><td>Integración frontend-backend (full stack)</td><td class="hrs">4h</td></tr><tr><td>Proyecto integrador</td><td class="hrs">2h</td></tr></tbody>
-            </table>
+            <p class="course-obj">Este curso desarrolla en el estudiante la capacidad de construir aplicaciones web completas utilizando el stack tecnológico más demandado actualmente en la industria: React en el frontend y Node.js en el backend. El participante aprenderá a construir interfaces basadas en componentes, gestionar el estado con hooks, desarrollar una API con Express conectada a una base de datos, e integrar ambas capas en una aplicación full stack funcional.</p>
+            <div class="units-grid">
+              <div class="unit">
+                <div class="unit-head">
+                  <span class="unit-title">Node.js y fundamentos de React</span>
+                  <span class="unit-hrs">6h</span>
+                </div>
+                <ul class="unit-topics"><li>Introducción a Node.js y npm</li><li>Fundamentos de React: componentes y props</li></ul>
+              </div>
+              <div class="unit">
+                <div class="unit-head">
+                  <span class="unit-title">Estado y backend</span>
+                  <span class="unit-hrs">8h</span>
+                </div>
+                <ul class="unit-topics"><li>Estado y hooks en React</li><li>Backend con Express y conexión a base de datos</li></ul>
+              </div>
+              <div class="unit">
+                <div class="unit-head">
+                  <span class="unit-title">Integración full stack y proyecto</span>
+                  <span class="unit-hrs">6h</span>
+                </div>
+                <ul class="unit-topics"><li>Integración frontend-backend</li><li>Proyecto integrador</li></ul>
+              </div>
+            </div>
           </div>
         </details>
         <details class="course-card">
@@ -840,16 +1295,35 @@
             <span class="course-icon">🔒</span>
             <span class="course-heading">
               <span class="course-title">Ciberseguridad Básica y Buenas Prácticas de Desarrollo Seguro</span>
-              <span class="course-obj">Aplicar principios de seguridad informática en el desarrollo de software.</span>
             </span>
             <span class="course-duration">20h</span>
             <span class="chev">›</span>
           </summary>
           <div class="course-body">
-            <table>
-              <thead><tr><th>Tema / Contenido</th><th>Horas</th></tr></thead>
-              <tbody><tr><td>Fundamentos de ciberseguridad (amenazas comunes)</td><td class="hrs">3h</td></tr><tr><td>Seguridad en el código: inyección SQL, XSS, CSRF</td><td class="hrs">5h</td></tr><tr><td>Autenticación y manejo seguro de contraseñas</td><td class="hrs">4h</td></tr><tr><td>Gestión de variables sensibles y buenas prácticas</td><td class="hrs">3h</td></tr><tr><td>Seguridad en redes y servidores</td><td class="hrs">2h</td></tr><tr><td>Auditoría básica de una aplicación</td><td class="hrs">3h</td></tr></tbody>
-            </table>
+            <p class="course-obj">Este curso desarrolla en el estudiante una conciencia y competencia técnica en seguridad informática aplicada al desarrollo de software, cubriendo desde las amenazas más comunes hasta las prácticas de codificación segura. El participante aprenderá a identificar y prevenir vulnerabilidades como inyección SQL, XSS y CSRF, gestionar de forma segura contraseñas y variables sensibles, y realizar una auditoría básica de seguridad sobre una aplicación real.</p>
+            <div class="units-grid">
+              <div class="unit">
+                <div class="unit-head">
+                  <span class="unit-title">Fundamentos y vulnerabilidades comunes</span>
+                  <span class="unit-hrs">8h</span>
+                </div>
+                <ul class="unit-topics"><li>Fundamentos de ciberseguridad: amenazas comunes</li><li>Seguridad en el código: inyección SQL, XSS y CSRF</li></ul>
+              </div>
+              <div class="unit">
+                <div class="unit-head">
+                  <span class="unit-title">Autenticación y buenas prácticas</span>
+                  <span class="unit-hrs">7h</span>
+                </div>
+                <ul class="unit-topics"><li>Autenticación y manejo seguro de contraseñas</li><li>Gestión de variables sensibles y buenas prácticas</li></ul>
+              </div>
+              <div class="unit">
+                <div class="unit-head">
+                  <span class="unit-title">Seguridad de infraestructura y auditoría</span>
+                  <span class="unit-hrs">5h</span>
+                </div>
+                <ul class="unit-topics"><li>Seguridad en redes y servidores</li><li>Auditoría básica de una aplicación</li></ul>
+              </div>
+            </div>
           </div>
         </details>
         <details class="course-card">
@@ -857,16 +1331,35 @@
             <span class="course-icon">📊</span>
             <span class="course-heading">
               <span class="course-title">Fundamentos de Ciencia de Datos y Machine Learning con Python</span>
-              <span class="course-obj">Aplicar técnicas básicas de análisis de datos y machine learning con Python.</span>
             </span>
             <span class="course-duration">20h</span>
             <span class="chev">›</span>
           </summary>
           <div class="course-body">
-            <table>
-              <thead><tr><th>Tema / Contenido</th><th>Horas</th></tr></thead>
-              <tbody><tr><td>Introducción a la ciencia de datos</td><td class="hrs">2h</td></tr><tr><td>Análisis de datos con pandas y numpy</td><td class="hrs">4h</td></tr><tr><td>Visualización de datos (matplotlib/seaborn)</td><td class="hrs">3h</td></tr><tr><td>Fundamentos de machine learning (conceptos, tipos)</td><td class="hrs">4h</td></tr><tr><td>Implementación de un modelo básico (scikit-learn)</td><td class="hrs">5h</td></tr><tr><td>Proyecto de análisis de datos</td><td class="hrs">2h</td></tr></tbody>
-            </table>
+            <p class="course-obj">Este curso introduce al estudiante en el campo de la ciencia de datos y el aprendizaje automático utilizando Python, aplicando herramientas estándar de la industria para el análisis, visualización y modelado predictivo de datos. El participante aprenderá a procesar datos con pandas y numpy, visualizarlos con matplotlib/seaborn, y construir un modelo básico de machine learning con scikit-learn, culminando con un proyecto de análisis de datos aplicado.</p>
+            <div class="units-grid">
+              <div class="unit">
+                <div class="unit-head">
+                  <span class="unit-title">Análisis y visualización de datos</span>
+                  <span class="unit-hrs">7h</span>
+                </div>
+                <ul class="unit-topics"><li>Introducción a la ciencia de datos</li><li>Análisis de datos con pandas y numpy</li><li>Visualización de datos con matplotlib/seaborn</li></ul>
+              </div>
+              <div class="unit">
+                <div class="unit-head">
+                  <span class="unit-title">Fundamentos de machine learning</span>
+                  <span class="unit-hrs">9h</span>
+                </div>
+                <ul class="unit-topics"><li>Conceptos y tipos de machine learning</li><li>Implementación de un modelo básico con scikit-learn</li></ul>
+              </div>
+              <div class="unit">
+                <div class="unit-head">
+                  <span class="unit-title">Proyecto aplicado</span>
+                  <span class="unit-hrs">4h</span>
+                </div>
+                <ul class="unit-topics"><li>Proyecto de análisis de datos</li></ul>
+              </div>
+            </div>
           </div>
         </details>
         <details class="course-card">
@@ -874,16 +1367,35 @@
             <span class="course-icon">☁️</span>
             <span class="course-heading">
               <span class="course-title">DevOps Básico: Contenedores (Docker) y Despliegue en la Nube (AWS/Azure/GCP)</span>
-              <span class="course-obj">Aplicar prácticas básicas de DevOps para contenerizar y desplegar aplicaciones.</span>
             </span>
             <span class="course-duration">20h</span>
             <span class="chev">›</span>
           </summary>
           <div class="course-body">
-            <table>
-              <thead><tr><th>Tema / Contenido</th><th>Horas</th></tr></thead>
-              <tbody><tr><td>Fundamentos de DevOps y CI/CD</td><td class="hrs">2h</td></tr><tr><td>Contenedores con Docker: imágenes y contenedores</td><td class="hrs">5h</td></tr><tr><td>Docker Compose para aplicaciones multi-servicio</td><td class="hrs">3h</td></tr><tr><td>Introducción a la nube (AWS/Azure/GCP)</td><td class="hrs">3h</td></tr><tr><td>Despliegue de una aplicación en la nube</td><td class="hrs">5h</td></tr><tr><td>Monitoreo básico post-despliegue</td><td class="hrs">2h</td></tr></tbody>
-            </table>
+            <p class="course-obj">Este curso cierra el diplomado capacitando al estudiante en prácticas fundamentales de DevOps, permitiéndole contenerizar aplicaciones con Docker y desplegarlas en plataformas de nube modernas. El participante aprenderá a construir imágenes y contenedores, orquestar aplicaciones multi-servicio con Docker Compose, y desplegar y monitorear una aplicación real en un proveedor de nube (AWS, Azure o GCP), cerrando el ciclo completo de desarrollo y publicación de software.</p>
+            <div class="units-grid">
+              <div class="unit">
+                <div class="unit-head">
+                  <span class="unit-title">Fundamentos y contenedores</span>
+                  <span class="unit-hrs">7h</span>
+                </div>
+                <ul class="unit-topics"><li>Fundamentos de DevOps y CI/CD</li><li>Contenedores con Docker: imágenes y contenedores</li></ul>
+              </div>
+              <div class="unit">
+                <div class="unit-head">
+                  <span class="unit-title">Orquestación y nube</span>
+                  <span class="unit-hrs">6h</span>
+                </div>
+                <ul class="unit-topics"><li>Docker Compose para aplicaciones multi-servicio</li><li>Introducción a la nube (AWS/Azure/GCP)</li></ul>
+              </div>
+              <div class="unit">
+                <div class="unit-head">
+                  <span class="unit-title">Despliegue y monitoreo</span>
+                  <span class="unit-hrs">7h</span>
+                </div>
+                <ul class="unit-topics"><li>Despliegue de una aplicación en la nube</li><li>Monitoreo básico post-despliegue</li></ul>
+              </div>
+            </div>
           </div>
         </details>
       </div>
@@ -891,7 +1403,7 @@
   </main>
 
   <footer>
-    Diplomado en Programación de Computadoras <span class="dot">●</span> Contenido curricular 2026 <span class="dot2">●</span> Enfoque STEM
+    Diplomado en Programación de Computadoras <span class="dot">●</span> Contenido curricular detallado 2027 <span class="dot2">●</span> Enfoque STEM
   </footer>
 
 <script>
