@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diplomado en Programación de Computadoras — Contenido Curricular</title>
+<style>
+  :root {
+    --win-blue: #0078D4;
+    --win-blue-dark: #005A9E;
+    --win-blue-light: #60CDFF;
+    --win-red: #E81123;
+    --win-red-dark: #B4131F;
+    --win-red-light: #FF99A4;
+    --bg: #F3F3F3;
+    --mica: rgba(255,255,255,0.72);
+    --card: #FFFFFF;
+    --text: #1B1A19;
+    --text-soft: #5B5955;
+    --border: rgba(0,0,0,0.08);
+    --shadow: 0 2px 6px rgba(0,0,0,0.08), 0 8px 24px rgba(0,0,0,0.06);
+    --radius: 8px;
+    --radius-lg: 14px;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    font-family: "Segoe UI Variable", "Segoe UI", "Segoe UI Historic", system-ui, -apple-system, sans-serif;
+    background:
+      radial-gradient(1200px 600px at 85% -10%, rgba(0,120,212,0.14), transparent 60%),
+      radial-gradient(900px 500px at -10% 20%, rgba(232,17,35,0.10), transparent 55%),
+      var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: var(--win-blue); }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    position: relative;
+    padding: 64px 32px 40px;
+    background: linear-gradient(135deg, var(--win-blue-dark) 0%, var(--win-blue) 55%, var(--win-red-dark) 130%);
+    color: #fff;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(500px 300px at 90% 10%, rgba(255,255,255,0.18), transparent 60%),
+      radial-gradient(400px 250px at 10% 90%, rgba(232,17,35,0.35), transparent 60%);
+    pointer-events: none;
+  }
+  .hero-inner {
+    position: relative;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,255,255,0.16);
+    border: 1px solid rgba(255,255,255,0.3);
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 13px;
+    letter-spacing: 0.2px;
+    margin-bottom: 18px;
+    backdrop-filter: blur(6px);
+  }
+  .hero h1 {
+    font-size: clamp(28px, 4.2vw, 46px);
+    line-height: 1.12;
+    margin: 0 0 12px;
+    font-weight: 600;
+    max-width: 780px;
+  }
+  .hero p.lead {
+    font-size: 17px;
+    max-width: 620px;
+    color: rgba(255,255,255,0.88);
+    margin: 0 0 32px;
+    line-height: 1.55;
+  }
+  .hero-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+  .stat {
+    background: rgba(255,255,255,0.14);
+    border: 1px solid rgba(255,255,255,0.22);
+    border-radius: var(--radius-lg);
+    padding: 14px 20px;
+    min-width: 130px;
+    backdrop-filter: blur(8px);
+  }
+  .stat .num { font-size: 24px; font-weight: 600; display:block; }
+  .stat .label { font-size: 12.5px; color: rgba(255,255,255,0.8); }
+
+  /* ---------- Hardware strip ---------- */
+  .hw-strip {
+    max-width: 1100px;
+    margin: -28px auto 0;
+    position: relative;
+    z-index: 2;
+    padding: 0 32px;
+  }
+  .hw-strip-inner {
+    background: var(--mica);
+    backdrop-filter: blur(20px) saturate(1.4);
+    -webkit-backdrop-filter: blur(20px) saturate(1.4);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow);
+    padding: 18px 22px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 22px;
+    justify-content: center;
+  }
+  .hw-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: var(--text-soft);
+    white-space: nowrap;
+  }
+  .hw-item .ic { font-size: 18px; }
+
+  /* ---------- Nav tabs ---------- */
+  .tabs-wrap {
+    max-width: 1100px;
+    margin: 34px auto 0;
+    padding: 0 32px;
+  }
+  .tabs {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .tab {
+    flex: 1 1 220px;
+    text-align: left;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 14px 18px;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text);
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    box-shadow: var(--shadow);
+    transition: transform 0.15s ease, border-color 0.15s ease;
+    border-bottom: 3px solid transparent;
+  }
+  .tab:hover { transform: translateY(-2px); }
+  .tab.active {
+    border-bottom: 3px solid var(--win-blue);
+    color: var(--win-blue-dark);
+  }
+  .tab.active:nth-child(2) { border-bottom-color: var(--win-red); color: var(--win-red-dark); }
+  .tab.active:nth-child(3) {
+    border-bottom: 3px solid;
+    border-image: linear-gradient(90deg, var(--win-blue), var(--win-red)) 1;
+  }
+  .tab-sub { font-size: 12.5px; font-weight: 400; color: var(--text-soft); }
+
+  /* ---------- Level panels ---------- */
+  main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 28px 32px 80px;
+  }
+  .level-panel { display: none; }
+  .level-panel.active { display: block; animation: fadein 0.25s ease; }
+  @keyframes fadein { from { opacity:0; transform: translateY(6px);} to {opacity:1; transform:none;} }
+
+  .level-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 22px 0 18px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 14px;
+  }
+  .level-header h2 { margin: 0; font-size: 22px; font-weight: 600; }
+  .level-header p { margin: 0; color: var(--text-soft); font-size: 14px; }
+
+  .course-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .course-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+  }
+  .course-card summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 16px 18px;
+    display: grid;
+    grid-template-columns: 40px 1fr auto 20px;
+    align-items: center;
+    gap: 14px;
+  }
+  .course-card summary::-webkit-details-marker { display: none; }
+  .course-icon { font-size: 24px; text-align: center; }
+  .course-heading { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+  .course-title { font-weight: 600; font-size: 15px; }
+  .course-obj { font-size: 13px; color: var(--text-soft); line-height: 1.4; }
+  .course-duration {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--win-blue-dark);
+    background: rgba(0,120,212,0.10);
+    padding: 4px 10px;
+    border-radius: 999px;
+    white-space: nowrap;
+  }
+  .chev {
+    font-size: 20px;
+    color: var(--text-soft);
+    transition: transform 0.2s ease;
+    justify-self: end;
+  }
+  .course-card[open] .chev { transform: rotate(90deg); color: var(--win-red); }
+  .course-card[open] summary { border-bottom: 1px solid var(--border); }
+
+  .course-body { padding: 6px 18px 16px 72px; }
+  table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+  thead th {
+    text-align: left;
+    color: var(--text-soft);
+    font-weight: 600;
+    padding: 6px 8px;
+    border-bottom: 1px solid var(--border);
+  }
+  tbody td { padding: 8px; border-bottom: 1px solid rgba(0,0,0,0.05); }
+  tbody tr:last-child td { border-bottom: none; }
+  td.hrs { text-align: right; color: var(--win-red-dark); font-weight: 600; white-space: nowrap; }
+
+  footer {
+    text-align: center;
+    padding: 30px 20px 50px;
+    color: var(--text-soft);
+    font-size: 13px;
+  }
+  footer .dot { color: var(--win-blue); }
+  footer .dot2 { color: var(--win-red); }
+
+  @media (max-width: 640px) {
+    .hero { padding: 48px 18px 32px; }
+    .tabs-wrap, main, .hw-strip { padding-left: 16px; padding-right: 16px; }
+    .course-card summary { grid-template-columns: 32px 1fr 18px; grid-template-areas: "icon title chev" "dur dur dur"; }
+    .course-duration { justify-self: start; margin-top: 4px; }
+    .course-body { padding-left: 18px; }
+  }
+</style>
+</head>
+<body>
+
+  <header class="hero">
+    <div class="hero-inner">
+      <span class="hero-badge">📘 Diplomado · Enfoque STEM</span>
+      <h1>Diplomado en Programación de Computadoras</h1>
+      <p class="lead">Contenido curricular actualizado 2026 — de los fundamentos de hardware y sistemas operativos hasta robótica, inteligencia artificial, desarrollo web full-stack y despliegue en la nube.</p>
+      <div class="hero-stats">
+        <div class="stat"><span class="num">3</span><span class="label">Niveles / años</span></div>
+        <div class="stat"><span class="num">32</span><span class="label">Cursos</span></div>
+        <div class="stat"><span class="num">640</span><span class="label">Horas totales</span></div>
+        <div class="stat"><span class="num">20h</span><span class="label">Promedio por curso</span></div>
+      </div>
+    </div>
+  </header>
+
+  <div class="hw-strip">
+    <div class="hw-strip-inner">
+      <span class="hw-item"><span class="ic">💻</span>Laptops / PC</span>
+      <span class="hw-item"><span class="ic">🖨️</span>Impresora 3D</span>
+      <span class="hw-item"><span class="ic">🔌</span>Arduino</span>
+      <span class="hw-item"><span class="ic">🍓</span>Raspberry Pi</span>
+      <span class="hw-item"><span class="ic">🤖</span>Robótica</span>
+      <span class="hw-item"><span class="ic">🧠</span>IA generativa</span>
+      <span class="hw-item"><span class="ic">🗄️</span>Bases de datos</span>
+      <span class="hw-item"><span class="ic">☁️</span>Cloud / DevOps</span>
+      <span class="hw-item"><span class="ic">🔒</span>Ciberseguridad</span>
+      <span class="hw-item"><span class="ic">📱</span>Apps móviles</span>
+    </div>
+  </div>
+
+  <div class="tabs-wrap">
+    <nav class="tabs" id="tabs">
+      <button class="tab" data-target="nivel1">Año 1<span class="tab-sub">Nivel Inicial</span></button>
+<button class="tab" data-target="nivel2">Año 2<span class="tab-sub">Nivel Intermedio</span></button>
+<button class="tab" data-target="nivel3">Año 3<span class="tab-sub">Nivel Avanzado</span></button>
+
+    </nav>
+  </div>
+
+  <main>
+    
+    <section class="level-panel" id="nivel1">
+      <div class="level-header">
+        <h2>Nivel Inicial (Año 1)</h2>
+        <p>11 cursos · 220 horas</p>
+      </div>
+      <div class="course-grid">
+        <details class="course-card">
+          <summary>
+            <span class="course-icon">🖥️</span>
+            <span class="course-heading">
+              <span class="course-title">Fundamentos de Computación, Hardware/Software</span>
+              <span class="course-obj">Comprender los componentes físicos y lógicos de una computadora y su relación con la programación.</span>
+            </span>
+            <span class="course-duration">20h</span>
+            <span class="chev">›</span>
+          </summary>
+          <div class="course-body">
+            <table>
+              <thead><tr><th>Tema / Contenido</th><th>Horas</th></tr></thead>
+              <tbody><tr><td>Historia y evolución de la computación</td><td class="hrs">2h</td></tr><tr><td>Arquitectura del computador: CPU, memoria, almacenamiento, E/S</td><td class="hrs">4h</td></tr><tr><td>Sistemas numéricos: binario, decimal, hexadecimal</td><td class="hrs">4h</td></tr><tr><td>Software: sistemas operativos, aplicaciones, firmware</td><td class="hrs">4h</td></tr><tr><td>Ensamblaje básico y mantenimiento preventivo</td><td class="hrs">3h</td></tr><tr><td>Introducción a la nube y virtualización</td><td class="hrs">3h</td></tr></tbody>
+            </table>
+          </div>
+        </details>
+        <details class="course-card">
+          <summary>
+            <span class="course-icon">🪟</span>
+            <span class="course-heading">
+              <span class="course-title">Sistema Operativo I, Windows 11</span>
+              <span class="course-obj">Administrar el sistema operativo Windows 11 a nivel de usuario avanzado, con enfoque en productividad para programadores.</span>
+            </span>
+            <span class="course-duration">20h</span>
+            <span class="chev">›</span>
+          </summary>
+          <div class="course-body">
+            <table>
+              <thead><tr><th>Tema / Contenido</th><th>Horas</th></tr></thead>
+              <tbody><tr><td>Instalación y configuración de Windows 11</td><td class="hrs">3h</td></tr><tr><td>Sistema de archivos NTFS y gestión de discos</td><td class="hrs">3h</td></tr><tr><td>Terminal de Windows y PowerShell básico</td><td class="hrs">5h</td></tr><tr><td>Administración de usuarios, permisos y seguridad</td><td class="hrs">3h</td></tr><tr><td>Instalación de entornos de desarrollo (Node, Python, Git)</td><td class="hrs">4h</td></tr><tr><td>Automatización con scripts .bat/.ps1</td><td class="hrs">2h</td></tr></tbody>
+            </table>
+          </div>
+        </details>
+        <details class="course-card">
+          <summary>
+            <span class="course-icon">🐧</span>
+            <span class="course-heading">
+              <span class="course-title">Sistema Operativo II, Linux Ubuntu 22.04.3 LTS</span>
+              <span class="course-obj">Utilizar Linux como entorno de desarrollo, dominando la terminal y la gestión de paquetes.</span>
+            </span>
+            <span class="course-duration">20h</span>
+            <span class="chev">›</span>
+          </summary>
+          <div class="course-body">
+            <table>
+              <thead><tr><th>Tema / Contenido</th><th>Horas</th></tr></thead>
+              <tbody><tr><td>Instalación de Ubuntu (dual boot / máquina virtual)</td><td class="hrs">2h</td></tr><tr><td>Estructura de directorios y sistema de archivos</td><td class="hrs">2h</td></tr><tr><td>Terminal Bash: comandos esenciales</td><td class="hrs">5h</td></tr><tr><td>Gestión de paquetes (APT) y compilación desde código fuente</td><td class="hrs">3h</td></tr><tr><td>Permisos, usuarios y procesos</td><td class="hrs">4h</td></tr><tr><td>Scripting en Bash para automatización</td><td class="hrs">4h</td></tr></tbody>
+            </table>
+          </div>
+        </details>
+        <details class="course-card">
+          <summary>
+            <span class="course-icon">🧠</span>
+            <span class="course-heading">
+              <span class="course-title">Herramientas de IA (Inteligencia Artificial)</span>
+              <span class="course-obj">Aplicar herramientas de IA generativa y asistentes de código como apoyo al desarrollo de software.</span>
+            </span>
+            <span class="course-duration">20h</span>
+            <span class="chev">›</span>
+          </summary>
+          <div class="course-body">
+            <table>
+              <thead><tr><th>Tema / Contenido</th><th>Horas</th></tr></thead>
+              <tbody><tr><td>Fundamentos de IA y machine learning (conceptos)</td><td class="hrs">3h</td></tr><tr><td>Asistentes de código (GitHub Copilot, Claude, ChatGPT)</td><td class="hrs">5h</td></tr><tr><td>Prompt engineering para generación y depuración de código</td><td class="hrs">4h</td></tr><tr><td>Herramientas de IA para diseño e imágenes</td><td class="hrs">4h</td></tr><tr><td>Ética, limitaciones y verificación de resultados de IA</td><td class="hrs">2h</td></tr><tr><td>Proyecto: automatizar una tarea con IA</td><td class="hrs">2h</td></tr></tbody>
+            </table>
+          </div>
+        </details>
+        <details class="course-card">
+          <summary>
+            <span class="course-icon">🤖</span>
+            <span class="course-heading">
+              <span class="course-title">Introducción a la Robótica</span>
+              <span class="course-obj">Comprender los fundamentos de la robótica y su relación con la programación de sistemas embebidos.</span>
+            </span>
+            <span class="course-duration">20h</span>
+            <span class="chev">›</span>
+          </summary>
+          <div class="course-body">
+            <table>
+              <thead><tr><th>Tema / Contenido</th><th>Horas</th></tr></thead>
+              <tbody><tr><td>Historia y componentes de un robot (sensores, actuadores)</td><td class="hrs">3h</td></tr><tr><td>Electrónica básica: circuitos, voltaje, corriente</td><td class="hrs">4h</td></tr><tr><td>Introducción a microcontroladores</td><td class="hrs">4h</td></tr><tr><td>Lógica de control: condicionales y bucles aplicados a robótica</td><td class="hrs">4h</td></tr><tr><td>Simulación de circuitos (Tinkercad)</td><td class="hrs">3h</td></tr><tr><td>Proyecto introductorio de robótica</td><td class="hrs">2h</td></tr></tbody>
+            </table>
+          </div>
+        </details>
+        <details class="course-card">
+          <summary>
+            <span class="course-icon">🖨️</span>
+            <span class="course-heading">
+              <span class="course-title">Fundamentos de Diseño e Impresión 3D</span>
+              <span class="course-obj">Diseñar modelos 3D básicos y prepararlos para impresión, integrando con proyectos de programación/robótica.</span>
+            </span>
+            <span class="course-duration">20h</span>
+            <span class="chev">›</span>
+          </summary>
+          <div class="course-body">
+            <table>
+              <thead><tr><th>Tema / Contenido</th><th>Horas</th></tr></thead>
+              <tbody><tr><td>Introducción al modelado 3D (conceptos, software)</td><td class="hrs">3h</td></tr><tr><td>Diseño con Tinkercad/Blender básico</td><td class="hrs">5h</td></tr><tr><td>Preparación de archivos STL y slicing</td><td class="hrs">4h</td></tr><tr><td>Fundamentos de impresión FDM</td><td class="hrs">4h</td></tr><tr><td>Diseño de carcasas para proyectos electrónicos/robótica</td><td class="hrs">4h</td></tr></tbody>
+            </table>
+          </div>
+        </details>
+        <details class="course-card">
+          <summary>
+            <span class="course-icon">🧩</span>
+            <span class="course-heading">
+              <span class="course-title">Introducción a la Programación, Historia/Algoritmos</span>
+              <span class="course-obj">Desarrollar pensamiento algorítmico y comprender la lógica de programación previo a un lenguaje formal.</span>
+            </span>
+            <span class="course-duration">20h</span>
+            <span class="chev">›</span>
+          </summary>
+          <div class="course-body">
+            <table>
+              <thead><tr><th>Tema / Contenido</th><th>Horas</th></tr></thead>
+              <tbody><tr><td>Historia de la programación y paradigmas</td><td class="hrs">2h</td></tr><tr><td>Algoritmos: definición, características, pseudocódigo</td><td class="hrs">4h</td></tr><tr><td>Diagramas de flujo</td><td class="hrs">4h</td></tr><tr><td>Estructuras de control: secuencia, selección, repetición</td><td class="hrs">6h</td></tr><tr><td>Resolución de problemas algorítmicos</td><td class="hrs">4h</td></tr></tbody>
+            </table>
+          </div>
+        </details>
+        <details class="course-card">
+          <summary>
+            <span class="course-icon">💻</span>
+            <span class="course-heading">
+              <span class="course-title">Programación I, Programación Estructurada</span>
+              <span class="course-obj">Programar aplicando estructuras de control, funciones y manejo de datos básicos en un lenguaje estructurado.</span>
+            </span>
+            <span class="course-duration">20h</span>
+            <span class="chev">›</span>
+          </summary>
+          <div class="course-body">
+            <table>
+              <thead><tr><th>Tema / Contenido</th><th>Horas</th></tr></thead>
+              <tbody><tr><td>Variables, tipos de datos y operadores</td><td class="hrs">3h</td></tr><tr><td>Estructuras condicionales</td><td class="hrs">3h</td></tr><tr><td>Estructuras repetitivas</td><td class="hrs">4h</td></tr><tr><td>Arreglos y cadenas</td><td class="hrs">4h</td></tr><tr><td>Funciones y modularización</td><td class="hrs">4h</td></tr><tr><td>Proyecto integrador</td><td class="hrs">2h</td></tr></tbody>
+            </table>
+          </div>
+        </details>
+        <details class="course-card">
+          <summary>
+            <span class="course-icon">🐍</span>
+            <span class="course-heading">
+              <span class="course-title">Pensamiento Computacional y Lógica con Python</span>
+              <span class="course-obj">Introducir Python como primer lenguaje moderno, reforzando el pensamiento computacional.</span>
+            </span>
+            <span class="course-duration">20h</span>
+            <span class="chev">›</span>
+          </summary>
+          <div class="course-body">
+            <table>
+              <thead><tr><th>Tema / Contenido</th><th>Horas</th></tr></thead>
+              <tbody><tr><td>Instalación de Python y entorno (VS Code, Jupyter)</td><td class="hrs">2h</td></tr><tr><td>Sintaxis básica: variables, tipos, entrada/salida</td><td class="hrs">3h</td></tr><tr><td>Condicionales y bucles en Python</td><td class="hrs">4h</td></tr><tr><td>Listas, tuplas y diccionarios</td><td class="hrs">4h</td></tr><tr><td>Funciones y manejo de errores</td><td class="hrs">4h</td></tr><tr><td>Mini proyecto (calculadora, juego de lógica)</td><td class="hrs">3h</td></tr></tbody>
+            </table>
+          </div>
+        </details>
+        <details class="course-card">
+          <summary>
+            <span class="course-icon">🔀</span>
+            <span class="course-heading">
+              <span class="course-title">Control de Versiones con Git y GitHub</span>
+              <span class="course-obj">Gestionar el control de versiones de proyectos de código de forma colaborativa.</span>
+            </span>
+            <span class="course-duration">20h</span>
+            <span class="chev">›</span>
+          </summary>
+          <div class="course-body">
+            <table>
+              <thead><tr><th>Tema / Contenido</th><th>Horas</th></tr></thead>
+              <tbody><tr><td>Fundamentos de control de versiones</td><td class="hrs">2h</td></tr><tr><td>Git local: init, commit, branch, merge</td><td class="hrs">5h</td></tr><tr><td>Resolución de conflictos</td><td class="hrs">3h</td></tr><tr><td>GitHub: repositorios remotos, push/pull, forks</td><td class="hrs">4h</td></tr><tr><td>Flujo de trabajo colaborativo (Pull Requests, Issues)</td><td class="hrs">4h</td></tr><tr><td>Buenas prácticas de commits y documentación (README)</td><td class="hrs">2h</td></tr></tbody>
+            </table>
+          </div>
+        </details>
+        <details class="course-card">
+          <summary>
+            <span class="course-icon">➗</span>
+            <span class="course-heading">
+              <span class="course-title">Matemática Aplicada a la Programación</span>
+              <span class="course-obj">Aplicar conceptos matemáticos fundamentales para la resolución de problemas de programación.</span>
+            </span>
+            <span class="course-duration">20h</span>
+            <span class="chev">›</span>
+          </summary>
+          <div class="course-body">
+            <table>
+              <thead><tr><th>Tema / Contenido</th><th>Horas</th></tr></thead>
+              <tbody><tr><td>Lógica proposicional y álgebra booleana</td><td class="hrs">4h</td></tr><tr><td>Conjuntos y funciones</td><td class="hrs">3h</td></tr><tr><td>Álgebra aplicada (ecuaciones, variables)</td><td class="hrs">4h</td></tr><tr><td>Estadística descriptiva básica</td><td class="hrs">4h</td></tr><tr><td>Notación y complejidad (introducción a Big O)</td><td class="hrs">3h</td></tr><tr><td>Ejercicios aplicados en código</td><td class="hrs">2h</td></tr></tbody>
+            </table>
+          </div>
+        </details>
+      </div>
+    </section>
+    <section class="level-panel" id="nivel2">
+      <div class="level-header">
+        <h2>Nivel Intermedio (Año 2)</h2>
+        <p>12 cursos · 240 horas</p>
+      </div>
+      <div class="course-grid">
+        <details class="course-card">
+          <summary>
+            <span class="course-icon">🔌</span>
+            <span class="course-heading">
+              <span class="course-title">Robótica I, Arduino</span>
+              <span class="course-obj">Programar microcontroladores Arduino para el control de sensores y actuadores.</span>
+            </span>
+            <span class="course-duration">20h</span>
+            <span class="chev">›</span>
+          </summary>
+          <div class="course-body">
+            <table>
+              <thead><tr><th>Tema / Contenido</th><th>Horas</th></tr></thead>
+              <tbody><tr><td>Introducción a Arduino IDE y hardware</td><td class="hrs">2h</td></tr><tr><td>Entradas y salidas digitales/analógicas</td><td class="hrs">4h</td></tr><tr><td>Sensores básicos (temperatura, ultrasonido, luz)</td><td class="hrs">4h</td></tr><tr><td>Actuadores: motores, servos, LEDs</td><td class="hrs">4h</td></tr><tr><td>Comunicación serial</td><td class="hrs">3h</td></tr><tr><td>Proyecto integrador con Arduino</td><td class="hrs">3h</td></tr></tbody>
+            </table>
+          </div>
+        </details>
+        <details class="course-card">
+          <summary>
+            <span class="course-icon">🍓</span>
+            <span class="course-heading">
+              <span class="course-title">Robótica II, Raspberry</span>
+              <span class="course-obj">Programar Raspberry Pi como plataforma de cómputo para proyectos de robótica e IoT.</span>
+            </span>
+            <span class="course-duration">20h</span>
+            <span class="chev">›</span>
+          </summary>
+          <div class="course-body">
+            <table>
+              <thead><tr><th>Tema / Contenido</th><th>Horas</th></tr></thead>
+              <tbody><tr><td>Configuración de Raspberry Pi OS</td><td class="hrs">2h</td></tr><tr><td>GPIO: control de pines desde Python</td><td class="hrs">5h</td></tr><tr><td>Integración de sensores y cámara</td><td class="hrs">4h</td></tr><tr><td>Comunicación Raspberry-Arduino</td><td class="hrs">4h</td></tr><tr><td>Introducción a IoT y conectividad remota</td><td class="hrs">3h</td></tr><tr><td>Proyecto integrador</td><td class="hrs">2h</td></tr></tbody>
+            </table>
+          </div>
+        </details>
+        <details class="course-card">
+          <summary>
+            <span class="course-icon">🗄️</span>
+            <span class="course-heading">
+              <span class="course-title">Introducción a la Base de Datos</span>
+              <span class="course-obj">Comprender los fundamentos del modelado y diseño de bases de datos relacionales.</span>
+            </span>
+            <span class="course-duration">20h</span>
+            <span class="chev">›</span>
+          </summary>
+          <div class="course-body">
+            <table>
+              <thead><tr><th>Tema / Contenido</th><th>Horas</th></tr></thead>
+              <tbody><tr><td>Conceptos de bases de datos y modelo relacional</td><td class="hrs">3h</td></tr><tr><td>Modelado Entidad-Relación</td><td class="hrs">5h</td></tr><tr><td>Normalización (1FN, 2FN, 3FN)</td><td class="hrs">4h</td></tr><tr><td>Claves primarias y foráneas</td><td class="hrs">3h</td></tr><tr><td>Diagramas con herramientas (MySQL Workbench)</td><td class="hrs">3h</td></tr><tr><td>Diseño de una base de datos aplicada</td><td class="hrs">2h</td></tr></tbody>
+            </table>
+          </div>
+        </details>
+        <details class="course-card">
+          <summary>
+            <span class="course-icon">🗃️</span>
+            <span class="course-heading">
+              <span class="course-title">Base de Datos II, SQL/MySQL</span>
+              <span class="course-obj">Implementar y manipular bases de datos relacionales usando SQL en MySQL.</span>
+            </span>
+            <span class="course-duration">20h</span>
+            <span class="chev">›</span>
+          </summary>
+          <div class="course-body">
+            <table>
+              <thead><tr><th>Tema / Contenido</th><th>Horas</th></tr></thead>
+              <tbody><tr><td>Instalación y configuración de MySQL</td><td class="hrs">2h</td></tr><tr><td>DDL: CREATE, ALTER, DROP</td><td class="hrs">3h</td></tr><tr><td>DML: INSERT, UPDATE, DELETE con confirmación de operaciones</td><td class="hrs">4h</td></tr><tr><td>Consultas SELECT: filtros, ordenamiento, agrupación</td><td class="hrs">4h</td></tr><tr><td>JOINs y subconsultas</td><td class="hrs">4h</td></tr><tr><td>Respaldos, exportación e integración con scripts externos</td><td class="hrs">3h</td></tr></tbody>
+            </table>
+          </div>
+        </details>
+        <details class="course-card">
+          <summary>
+            <span class="course-icon">🧱</span>
+            <span class="course-heading">
+              <span class="course-title">Programación II, Programación Orientada a Objetos</span>
+              <span class="course-obj">Aplicar el paradigma de programación orientada a objetos en la resolución de problemas.</span>
+            </span>
+            <span class="course-duration">20h</span>
+            <span class="chev">›</span>
+          </summary>
+          <div class="course-body">
+            <table>
+              <thead><tr><th>Tema / Contenido</th><th>Horas</th></tr></thead>
+              <tbody><tr><td>Clases, objetos y atributos</td><td class="hrs">3h</td></tr><tr><td>Encapsulamiento y métodos</td><td class="hrs">3h</td></tr><tr><td>Herencia</td><td class="hrs">4h</td></tr><tr><td>Polimorfismo</td><td class="hrs">4h</td></tr><tr><td>Interfaces y clases abstractas</td><td class="hrs">3h</td></tr><tr><td>Proyecto POO integrador</td><td class="hrs">3h</td></tr></tbody>
+            </table>
+          </div>
+        </details>
+        <details class="course-card">
+          <summary>
+            <span class="course-icon">⚙️</span>
+            <span class="course-heading">
+              <span class="course-title">Laboratorio de Programación II, C++</span>
+              <span class="course-obj">Aplicar programación orientada a objetos y manejo de memoria en C++ mediante ejercicios prácticos de laboratorio.</span>
+            </span>
+            <span class="course-duration">20h</span>
+            <span class="chev">›</span>
+          </summary>
+          <div class="course-body">
+            <table>
+              <thead><tr><th>Tema / Contenido</th><th>Horas</th></tr></thead>
+              <tbody><tr><td>Sintaxis de C++ y diferencias con otros lenguajes</td><td class="hrs">2h</td></tr><tr><td>Punteros y manejo de memoria</td><td class="hrs">5h</td></tr><tr><td>Estructuras y clases en C++</td><td class="hrs">4h</td></tr><tr><td>STL: vectores, listas, mapas</td><td class="hrs">4h</td></tr><tr><td>Compilación y depuración</td><td class="hrs">3h</td></tr><tr><td>Proyecto de laboratorio</td><td class="hrs">2h</td></tr></tbody>
+            </table>
+          </div>
+        </details>
+        <details class="course-card">
+          <summary>
+            <span class="course-icon">🖨️</span>
+            <span class="course-heading">
+              <span class="course-title">Diseño 3D e Impresión 3D</span>
+              <span class="course-obj">Profundizar en modelado 3D avanzado e integrarlo con proyectos de programación y robótica.</span>
+            </span>
+            <span class="course-duration">20h</span>
+            <span class="chev">›</span>
+          </summary>
+          <div class="course-body">
+            <table>
+              <thead><tr><th>Tema / Contenido</th><th>Horas</th></tr></thead>
+              <tbody><tr><td>Modelado avanzado en Blender</td><td class="hrs">5h</td></tr><tr><td>Modelado paramétrico (Fusion 360 / OpenSCAD)</td><td class="hrs">5h</td></tr><tr><td>Optimización de impresión (soportes, relleno, calibración)</td><td class="hrs">4h</td></tr><tr><td>Diseño de piezas funcionales para proyectos de robótica</td><td class="hrs">4h</td></tr><tr><td>Proyecto de diseño e impresión</td><td class="hrs">2h</td></tr></tbody>
+            </table>
+          </div>
+        </details>
+        <details class="course-card">
+          <summary>
+            <span class="course-icon">🐍</span>
+            <span class="course-heading">
+              <span class="course-title">Programación III, Python</span>
+              <span class="course-obj">Profundizar en Python aplicado a proyectos intermedios con librerías externas.</span>
+            </span>
+            <span class="course-duration">20h</span>
+            <span class="chev">›</span>
+          </summary>
+          <div class="course-body">
+            <table>
+              <thead><tr><th>Tema / Contenido</th><th>Horas</th></tr></thead>
+              <tbody><tr><td>Programación orientada a objetos en Python</td><td class="hrs">4h</td></tr><tr><td>Manejo de archivos y excepciones</td><td class="hrs">3h</td></tr><tr><td>Librerías externas y entornos virtuales (venv, pip)</td><td class="hrs">3h</td></tr><tr><td>Manipulación de datos con pandas</td><td class="hrs">4h</td></tr><tr><td>Automatización de tareas con Python</td><td class="hrs">3h</td></tr><tr><td>Proyecto integrador</td><td class="hrs">3h</td></tr></tbody>
+            </table>
+          </div>
+        </details>
+        <details class="course-card">
+          <summary>
+            <span class="course-icon">🌐</span>
+            <span class="course-heading">
+              <span class="course-title">Programación de Páginas Web I, PHP/JavaScript</span>
+              <span class="course-obj">Desarrollar páginas web dinámicas básicas combinando HTML, JavaScript y PHP.</span>
+            </span>
+            <span class="course-duration">20h</span>
+            <span class="chev">›</span>
+          </summary>
+          <div class="course-body">
+            <table>
+              <thead><tr><th>Tema / Contenido</th><th>Horas</th></tr></thead>
+              <tbody><tr><td>Repaso de HTML/CSS y JavaScript básico</td><td class="hrs">3h</td></tr><tr><td>DOM y eventos en JavaScript</td><td class="hrs">4h</td></tr><tr><td>Introducción a PHP y sintaxis</td><td class="hrs">3h</td></tr><tr><td>Formularios y validación cliente/servidor</td><td class="hrs">4h</td></tr><tr><td>Conexión PHP-MySQL</td><td class="hrs">4h</td></tr><tr><td>Proyecto: sitio web dinámico simple</td><td class="hrs">2h</td></tr></tbody>
+            </table>
+          </div>
+        </details>
+        <details class="course-card">
+          <summary>
+            <span class="course-icon">🌳</span>
+            <span class="course-heading">
+              <span class="course-title">Estructuras de Datos y Algoritmos</span>
+              <span class="course-obj">Implementar estructuras de datos fundamentales y analizar la eficiencia de algoritmos.</span>
+            </span>
+            <span class="course-duration">20h</span>
+            <span class="chev">›</span>
+          </summary>
+          <div class="course-body">
+            <table>
+              <thead><tr><th>Tema / Contenido</th><th>Horas</th></tr></thead>
+              <tbody><tr><td>Complejidad algorítmica (Big O)</td><td class="hrs">3h</td></tr><tr><td>Pilas y colas</td><td class="hrs">3h</td></tr><tr><td>Listas enlazadas</td><td class="hrs">3h</td></tr><tr><td>Árboles y recorridos</td><td class="hrs">4h</td></tr><tr><td>Algoritmos de búsqueda y ordenamiento</td><td class="hrs">4h</td></tr><tr><td>Ejercicios de resolución de problemas</td><td class="hrs">3h</td></tr></tbody>
+            </table>
+          </div>
+        </details>
+        <details class="course-card">
+          <summary>
+            <span class="course-icon">🍃</span>
+            <span class="course-heading">
+              <span class="course-title">Bases de Datos NoSQL (MongoDB) y Modelado de Datos</span>
+              <span class="course-obj">Diseñar e implementar bases de datos NoSQL orientadas a documentos.</span>
+            </span>
+            <span class="course-duration">20h</span>
+            <span class="chev">›</span>
+          </summary>
+          <div class="course-body">
+            <table>
+              <thead><tr><th>Tema / Contenido</th><th>Horas</th></tr></thead>
+              <tbody><tr><td>Diferencias entre bases de datos SQL y NoSQL</td><td class="hrs">2h</td></tr><tr><td>Instalación y configuración de MongoDB</td><td class="hrs">2h</td></tr><tr><td>Modelado de documentos (JSON/BSON)</td><td class="hrs">4h</td></tr><tr><td>Operaciones CRUD en MongoDB</td><td class="hrs">4h</td></tr><tr><td>Agregaciones y consultas avanzadas</td><td class="hrs">4h</td></tr><tr><td>Integración de MongoDB con una aplicación</td><td class="hrs">4h</td></tr></tbody>
+            </table>
+          </div>
+        </details>
+        <details class="course-card">
+          <summary>
+            <span class="course-icon">🔗</span>
+            <span class="course-heading">
+              <span class="course-title">Desarrollo de APIs REST</span>
+              <span class="course-obj">Diseñar y consumir APIs REST para conectar backend, bases de datos y aplicaciones cliente.</span>
+            </span>
+            <span class="course-duration">20h</span>
+            <span class="chev">›</span>
+          </summary>
+          <div class="course-body">
+            <table>
+              <thead><tr><th>Tema / Contenido</th><th>Horas</th></tr></thead>
+              <tbody><tr><td>Fundamentos de arquitectura REST y protocolo HTTP</td><td class="hrs">3h</td></tr><tr><td>Diseño de endpoints y verbos HTTP</td><td class="hrs">3h</td></tr><tr><td>Creación de una API con Node.js/Express</td><td class="hrs">5h</td></tr><tr><td>Autenticación básica (tokens, JWT)</td><td class="hrs">3h</td></tr><tr><td>Consumo de APIs desde frontend/Postman</td><td class="hrs">3h</td></tr><tr><td>Proyecto integrador: API conectada a base de datos</td><td class="hrs">3h</td></tr></tbody>
+            </table>
+          </div>
+        </details>
+      </div>
+    </section>
+    <section class="level-panel" id="nivel3">
+      <div class="level-header">
+        <h2>Nivel Avanzado (Año 3)</h2>
+        <p>9 cursos · 180 horas</p>
+      </div>
+      <div class="course-grid">
+        <details class="course-card">
+          <summary>
+            <span class="course-icon">📡</span>
+            <span class="course-heading">
+              <span class="course-title">Redes de Computadoras II, Servidores (Firewall, Hosting, Mail)</span>
+              <span class="course-obj">Configurar y administrar servicios de red y servidores esenciales.</span>
+            </span>
+            <span class="course-duration">20h</span>
+            <span class="chev">›</span>
+          </summary>
+          <div class="course-body">
+            <table>
+              <thead><tr><th>Tema / Contenido</th><th>Horas</th></tr></thead>
+              <tbody><tr><td>Fundamentos de redes TCP/IP (repaso)</td><td class="hrs">2h</td></tr><tr><td>Configuración de servidores web (Apache/Nginx)</td><td class="hrs">4h</td></tr><tr><td>Firewall y reglas de seguridad de red</td><td class="hrs">4h</td></tr><tr><td>Hosting: dominios, DNS, certificados SSL</td><td class="hrs">4h</td></tr><tr><td>Configuración de servidor de correo básico</td><td class="hrs">3h</td></tr><tr><td>Monitoreo y mantenimiento de servidores</td><td class="hrs">3h</td></tr></tbody>
+            </table>
+          </div>
+        </details>
+        <details class="course-card">
+          <summary>
+            <span class="course-icon">📱</span>
+            <span class="course-heading">
+              <span class="course-title">Aplicaciones Móviles Multiplataforma (React Native / Flutter)</span>
+              <span class="course-obj">Desarrollar aplicaciones móviles multiplataforma para Android e iOS.</span>
+            </span>
+            <span class="course-duration">20h</span>
+            <span class="chev">›</span>
+          </summary>
+          <div class="course-body">
+            <table>
+              <thead><tr><th>Tema / Contenido</th><th>Horas</th></tr></thead>
+              <tbody><tr><td>Introducción al desarrollo móvil multiplataforma</td><td class="hrs">2h</td></tr><tr><td>Configuración del entorno (React Native/Flutter)</td><td class="hrs">3h</td></tr><tr><td>Componentes de interfaz y navegación</td><td class="hrs">4h</td></tr><tr><td>Manejo de estado y datos</td><td class="hrs">4h</td></tr><tr><td>Consumo de APIs REST desde la aplicación</td><td class="hrs">4h</td></tr><tr><td>Proyecto integrador: aplicación funcional</td><td class="hrs">3h</td></tr></tbody>
+            </table>
+          </div>
+        </details>
+        <details class="course-card">
+          <summary>
+            <span class="course-icon">🤖</span>
+            <span class="course-heading">
+              <span class="course-title">Proyecto Robótica Arduino-Raspberry</span>
+              <span class="course-obj">Integrar Arduino y Raspberry Pi en un proyecto robótico funcional completo.</span>
+            </span>
+            <span class="course-duration">20h</span>
+            <span class="chev">›</span>
+          </summary>
+          <div class="course-body">
+            <table>
+              <thead><tr><th>Tema / Contenido</th><th>Horas</th></tr></thead>
+              <tbody><tr><td>Planificación y diseño del proyecto</td><td class="hrs">2h</td></tr><tr><td>Integración de hardware (sensores/actuadores)</td><td class="hrs">4h</td></tr><tr><td>Comunicación y control entre Arduino y Raspberry</td><td class="hrs">4h</td></tr><tr><td>Programación de la lógica de control</td><td class="hrs">5h</td></tr><tr><td>Pruebas, ajustes y depuración</td><td class="hrs">3h</td></tr><tr><td>Presentación y documentación del proyecto</td><td class="hrs">2h</td></tr></tbody>
+            </table>
+          </div>
+        </details>
+        <details class="course-card">
+          <summary>
+            <span class="course-icon">📐</span>
+            <span class="course-heading">
+              <span class="course-title">Ingeniería de Software, Análisis y Diseño de Sistemas</span>
+              <span class="course-obj">Aplicar metodologías de ingeniería de software para el análisis y diseño de sistemas.</span>
+            </span>
+            <span class="course-duration">20h</span>
+            <span class="chev">›</span>
+          </summary>
+          <div class="course-body">
+            <table>
+              <thead><tr><th>Tema / Contenido</th><th>Horas</th></tr></thead>
+              <tbody><tr><td>Ciclo de vida del software y metodologías ágiles (Scrum)</td><td class="hrs">4h</td></tr><tr><td>Levantamiento y análisis de requisitos</td><td class="hrs">3h</td></tr><tr><td>Diagramas UML (casos de uso, clases, secuencia)</td><td class="hrs">5h</td></tr><tr><td>Diseño de arquitectura de software</td><td class="hrs">4h</td></tr><tr><td>Documentación técnica</td><td class="hrs">2h</td></tr><tr><td>Taller de análisis de un caso real</td><td class="hrs">2h</td></tr></tbody>
+            </table>
+          </div>
+        </details>
+        <details class="course-card">
+          <summary>
+            <span class="course-icon">🚀</span>
+            <span class="course-heading">
+              <span class="course-title">Proyecto de Software, Programación/Publicación de Software (grupal)</span>
+              <span class="course-obj">Desarrollar y publicar un proyecto de software grupal aplicando lo aprendido en el diplomado.</span>
+            </span>
+            <span class="course-duration">20h</span>
+            <span class="chev">›</span>
+          </summary>
+          <div class="course-body">
+            <table>
+              <thead><tr><th>Tema / Contenido</th><th>Horas</th></tr></thead>
+              <tbody><tr><td>Planificación del proyecto (alcance, roles)</td><td class="hrs">2h</td></tr><tr><td>Desarrollo colaborativo con Git</td><td class="hrs">3h</td></tr><tr><td>Implementación (backend, frontend y base de datos)</td><td class="hrs">7h</td></tr><tr><td>Pruebas y control de calidad</td><td class="hrs">3h</td></tr><tr><td>Publicación y despliegue del proyecto</td><td class="hrs">3h</td></tr><tr><td>Presentación final</td><td class="hrs">2h</td></tr></tbody>
+            </table>
+          </div>
+        </details>
+        <details class="course-card">
+          <summary>
+            <span class="course-icon">⚛️</span>
+            <span class="course-heading">
+              <span class="course-title">Programación de Páginas Web II, Frameworks Modernos (React/Node.js)</span>
+              <span class="course-obj">Desarrollar aplicaciones web completas usando un framework frontend y Node.js en el backend.</span>
+            </span>
+            <span class="course-duration">20h</span>
+            <span class="chev">›</span>
+          </summary>
+          <div class="course-body">
+            <table>
+              <thead><tr><th>Tema / Contenido</th><th>Horas</th></tr></thead>
+              <tbody><tr><td>Introducción a Node.js y npm</td><td class="hrs">2h</td></tr><tr><td>Fundamentos de React: componentes y props</td><td class="hrs">4h</td></tr><tr><td>Estado y hooks en React</td><td class="hrs">4h</td></tr><tr><td>Backend con Express y conexión a base de datos</td><td class="hrs">4h</td></tr><tr><td>Integración frontend-backend (full stack)</td><td class="hrs">4h</td></tr><tr><td>Proyecto integrador</td><td class="hrs">2h</td></tr></tbody>
+            </table>
+          </div>
+        </details>
+        <details class="course-card">
+          <summary>
+            <span class="course-icon">🔒</span>
+            <span class="course-heading">
+              <span class="course-title">Ciberseguridad Básica y Buenas Prácticas de Desarrollo Seguro</span>
+              <span class="course-obj">Aplicar principios de seguridad informática en el desarrollo de software.</span>
+            </span>
+            <span class="course-duration">20h</span>
+            <span class="chev">›</span>
+          </summary>
+          <div class="course-body">
+            <table>
+              <thead><tr><th>Tema / Contenido</th><th>Horas</th></tr></thead>
+              <tbody><tr><td>Fundamentos de ciberseguridad (amenazas comunes)</td><td class="hrs">3h</td></tr><tr><td>Seguridad en el código: inyección SQL, XSS, CSRF</td><td class="hrs">5h</td></tr><tr><td>Autenticación y manejo seguro de contraseñas</td><td class="hrs">4h</td></tr><tr><td>Gestión de variables sensibles y buenas prácticas</td><td class="hrs">3h</td></tr><tr><td>Seguridad en redes y servidores</td><td class="hrs">2h</td></tr><tr><td>Auditoría básica de una aplicación</td><td class="hrs">3h</td></tr></tbody>
+            </table>
+          </div>
+        </details>
+        <details class="course-card">
+          <summary>
+            <span class="course-icon">📊</span>
+            <span class="course-heading">
+              <span class="course-title">Fundamentos de Ciencia de Datos y Machine Learning con Python</span>
+              <span class="course-obj">Aplicar técnicas básicas de análisis de datos y machine learning con Python.</span>
+            </span>
+            <span class="course-duration">20h</span>
+            <span class="chev">›</span>
+          </summary>
+          <div class="course-body">
+            <table>
+              <thead><tr><th>Tema / Contenido</th><th>Horas</th></tr></thead>
+              <tbody><tr><td>Introducción a la ciencia de datos</td><td class="hrs">2h</td></tr><tr><td>Análisis de datos con pandas y numpy</td><td class="hrs">4h</td></tr><tr><td>Visualización de datos (matplotlib/seaborn)</td><td class="hrs">3h</td></tr><tr><td>Fundamentos de machine learning (conceptos, tipos)</td><td class="hrs">4h</td></tr><tr><td>Implementación de un modelo básico (scikit-learn)</td><td class="hrs">5h</td></tr><tr><td>Proyecto de análisis de datos</td><td class="hrs">2h</td></tr></tbody>
+            </table>
+          </div>
+        </details>
+        <details class="course-card">
+          <summary>
+            <span class="course-icon">☁️</span>
+            <span class="course-heading">
+              <span class="course-title">DevOps Básico: Contenedores (Docker) y Despliegue en la Nube (AWS/Azure/GCP)</span>
+              <span class="course-obj">Aplicar prácticas básicas de DevOps para contenerizar y desplegar aplicaciones.</span>
+            </span>
+            <span class="course-duration">20h</span>
+            <span class="chev">›</span>
+          </summary>
+          <div class="course-body">
+            <table>
+              <thead><tr><th>Tema / Contenido</th><th>Horas</th></tr></thead>
+              <tbody><tr><td>Fundamentos de DevOps y CI/CD</td><td class="hrs">2h</td></tr><tr><td>Contenedores con Docker: imágenes y contenedores</td><td class="hrs">5h</td></tr><tr><td>Docker Compose para aplicaciones multi-servicio</td><td class="hrs">3h</td></tr><tr><td>Introducción a la nube (AWS/Azure/GCP)</td><td class="hrs">3h</td></tr><tr><td>Despliegue de una aplicación en la nube</td><td class="hrs">5h</td></tr><tr><td>Monitoreo básico post-despliegue</td><td class="hrs">2h</td></tr></tbody>
+            </table>
+          </div>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    Diplomado en Programación de Computadoras <span class="dot">●</span> Contenido curricular 2026 <span class="dot2">●</span> Enfoque STEM
+  </footer>
+
+<script>
+  const tabs = document.querySelectorAll('.tab');
+  const panels = document.querySelectorAll('.level-panel');
+  function activate(id) {
+    tabs.forEach(t => t.classList.toggle('active', t.dataset.target === id));
+    panels.forEach(p => p.classList.toggle('active', p.id === id));
+  }
+  tabs.forEach(t => t.addEventListener('click', () => activate(t.dataset.target)));
+  activate(tabs[0].dataset.target);
+</script>
+
+</body>
+</html>
